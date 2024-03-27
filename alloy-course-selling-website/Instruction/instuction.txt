@@ -1,0 +1,24 @@
+General Instructions:
+
+1. Route path naming convention : example: '/signUp'
+2. Component name should be meaningful
+3. Function name should be meaningful
+4. Component name starts with capital latter : example : <Home></Home>
+5. All routes will be added into Pages folder : example : <Home> </Home> routes in pages folder
+6. 
+
+Git Instructions:
+#Git command help: https://github.com/joshnh/Git-Commands
+
+#Instruction01: 3 steps after changing anything into code
+Step1: git add .
+Step 2 : got commit -m "message"
+Step 3 : git push
+
+#Instruction01: Git branching command
+1. git branch -> list of branches into the repository
+2. git branch branchName -> Create a new branch
+3. git checkout branchName -> Switch to the branch equal to the branchName
+4. git merge branchName -> Merge a branch with Main branch. There is trick for using this command.  
+5. git push --set-upstream origin branchName -> push to the newly created branch
+
