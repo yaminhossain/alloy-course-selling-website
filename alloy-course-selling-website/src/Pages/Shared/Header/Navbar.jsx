@@ -14,8 +14,8 @@ const Navbar = () => {
   return (
     <div >
       <div className="flex justify-between my-16 mx-8 items-center">
-       
-        <div className="flex gap-5 items-center">
+        {/* Child flex-1 */}
+        <div className="flex gap-5 items-center ">
         <Link className="text-4xl font-bold" to="/">
           <h2>Alloy</h2>
         </Link>
@@ -30,7 +30,7 @@ const Navbar = () => {
           </label>
         </div>
 
-        {/* Flex -2 */}
+        {/* Child flex -2 */}
 
         <div className="flex gap-5 items-center">
           <Link to="/community">Community</Link>
