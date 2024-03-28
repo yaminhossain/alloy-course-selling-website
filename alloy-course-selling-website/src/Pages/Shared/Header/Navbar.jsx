@@ -13,7 +13,7 @@ import "./navbar.css";
 const Navbar = () => {
   return (
     <div >
-      <div className="flex justify-between my-16 mx-8 items-center">
+      <div className="flex justify-between my-5 mx-8 items-center">
         {/* Child flex-1 */}
         <div className="flex gap-5 items-center ">
         <Link className="text-4xl font-bold" to="/">
@@ -36,6 +36,10 @@ const Navbar = () => {
           <Link to="/community">Community</Link>
           <Link to="/courseRequest">Course Request</Link>
 
+          
+
+          <Link to="instructor">Instructor</Link>
+          <Link to="myLearning">My Learning</Link>
           <LanguageIcon className="w-6 h-6 cursor-pointer"></LanguageIcon>
 
           <label className="swap swap-rotate w-6 h-6">
@@ -61,9 +65,6 @@ const Navbar = () => {
             </svg>
           </label>
           <ShoppingCartIcon className=" w-6 h-6 cursor-pointer"></ShoppingCartIcon>
-
-          <Link to="instructor">Instructor</Link>
-          <Link to="myLearning">My Learning</Link>
 
           <BookmarkIcon className="w-6 h-6 cursor-pointer">
             <Link to="bookMarks"></Link>
