@@ -6,26 +6,30 @@ import { ShoppingCartIcon } from "@heroicons/react/24/outline";
 import { BookmarkIcon } from "@heroicons/react/24/outline";
 import { BellIcon } from "@heroicons/react/24/outline";
 
+// Css file for this page
+import "./navbar.css";
+
+// The component starts from here
 const Navbar = () => {
   return (
-    <div className="bg-yellow-400 h-10 mx-10 text-center ">
-      <div className="flex justify-between mx-5">
+    <div className="">
+      <div className="flex justify-between  my-16">
         <Link className="text-4xl font-bold" to="/">
           <h2>Alloy</h2>
         </Link>
-        <p>Categories</p>
-        <div className="search-field">
+        <p className="cursor-pointer">Categories</p>
+        <label className="search-field relative">
           <input
-            className="w-80 border-2 border-black rounded-full h-12"
-            type="search"
+            className="w-80 border-2 border-black rounded-full h-12 ps-10 focus:outline-none"
+            type="text"
             placeholder="Search your favorite courses"
           />
-          <MagnifyingGlassIcon className="w-6 h-6" />
-        </div>
+          <MagnifyingGlassIcon className="w-6 h-6 absolute bottom-1/3 left-2" />
+        </label>
         <Link to="/community">Community</Link>
         <Link to="/courseRequest">Course Request</Link>
 
-        <LanguageIcon className="w-6 h-6"></LanguageIcon>
+        <LanguageIcon className="w-6 h-6 cursor-pointer"></LanguageIcon>
 
         <label className="swap swap-rotate w-6 h-6">
           {/* this hidden checkbox controls the state */}
@@ -49,15 +53,19 @@ const Navbar = () => {
             <path d="M21.64,13a1,1,0,0,0-1.05-.14,8.05,8.05,0,0,1-3.37.73A8.15,8.15,0,0,1,9.08,5.49a8.59,8.59,0,0,1,.25-2A1,1,0,0,0,8,2.36,10.14,10.14,0,1,0,22,14.05,1,1,0,0,0,21.64,13Zm-9.5,6.69A8.14,8.14,0,0,1,7.08,5.22v.27A10.15,10.15,0,0,0,17.22,15.63a9.79,9.79,0,0,0,2.1-.22A8.11,8.11,0,0,1,12.14,19.73Z" />
           </svg>
         </label>
-        <ShoppingCartIcon className=" w-6 h-6"></ShoppingCartIcon>
+        <ShoppingCartIcon className=" w-6 h-6 cursor-pointer"></ShoppingCartIcon>
 
         <Link to="instructor">Instructor</Link>
         <Link to="myLearning">My Learning</Link>
 
-        <BookmarkIcon className="w-6 h-6"><Link to="bookMarks"></Link></BookmarkIcon>
-       <BellIcon className="w-6 h-6"></BellIcon>
+        <BookmarkIcon className="w-6 h-6 cursor-pointer">
+          <Link to="bookMarks"></Link>
+        </BookmarkIcon>
+        <BellIcon className="w-6 h-6 cursor-pointer"></BellIcon>
         <Link to="login">
-          <h2>Log In</h2>
+          <button className="border-2 border-black w-auto h-auto px-6 py-3 font-bold hover:text-white hover:bg-black ease-in duration-100">
+            Log In
+          </button>
         </Link>
 
         {/* <Link to="page1">
