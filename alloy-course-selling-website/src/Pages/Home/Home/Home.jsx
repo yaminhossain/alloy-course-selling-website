@@ -6,6 +6,7 @@ import RequestCourses from "../RequestCourses /RequestCourses";
 import SchoolAndColleges from "../SchoolAndColleges/SchoolAndColleges";
 import StudentThink from "../StudentThink/StudentThink";
 import TopCategories from "../TopCategories/TopCategories";
+import WonderfulJourney from "../WonderfulJourney/WonderfulJourney";
 
 
 const Home = () => {
@@ -19,6 +20,7 @@ const Home = () => {
             <StudentThink></StudentThink>
             <RequestCourses></RequestCourses>
             <JoinOurCommunity></JoinOurCommunity>
+            <WonderfulJourney></WonderfulJourney>
         </div>
     );
 };
