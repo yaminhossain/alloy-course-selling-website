@@ -7,7 +7,7 @@ const Footer = () => {
       <div className="w-full py-7 text-white bg-gray-900 px-64">
       <div className="flex justify-between">
         <div className="w-64">
-          <h1 className="mb-4">Alloy.com</h1>
+          <h1 className="mb-4 text-4xl font-extrabold">Alloy.com</h1>
           <p className="mb-4">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum dolore
             facilis laboriosam dolorem necessitatibus!
