@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+
 
 const PopularCourseComponent = ({ item }) => {
     const { id, courseBanner, courseHours, coursePrice, courseTitle, enrolledCount, features, milestones, modules, numberOfQuizzes, numberOfVideos, ratings, teacherName } = { item };
