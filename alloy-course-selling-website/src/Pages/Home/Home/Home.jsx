@@ -8,11 +8,9 @@ const Home = () => {
     return (
         <div >
             <Banner></Banner>
-            <div className="mx-40">
-                <TopCategories></TopCategories>
-                <FeaturedTopicByCategory></FeaturedTopicByCategory>
-                <PopularCourses></PopularCourses>
-            </div>
+            <TopCategories></TopCategories>
+            <FeaturedTopicByCategory></FeaturedTopicByCategory>
+            {/* <PopularCourses></PopularCourses> */}
         </div>
     );
 };
