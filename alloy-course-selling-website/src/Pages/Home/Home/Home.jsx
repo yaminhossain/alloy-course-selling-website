@@ -1,9 +1,18 @@
+import Banner from "../Banner/Banner";
+import FeaturedTopicByCategory from "../FeaturedTopicByCategory/FeaturedTopicByCategory";
+import PopularCourses from "../PopularCourses/PopularCourses";
+import TopCategories from "../TopCategories/TopCategories";
+
 
 const Home = () => {
     return (
         <div >
-             <h2 className="text-5xl text-center">Home</h2>
-             <h1>Hi Anik I have create a branch for Home page</h1>
+            <Banner></Banner>
+            <div className="mx-40">
+                <TopCategories></TopCategories>
+                <FeaturedTopicByCategory></FeaturedTopicByCategory>
+                <PopularCourses></PopularCourses>
+            </div>
         </div>
     );
 };
