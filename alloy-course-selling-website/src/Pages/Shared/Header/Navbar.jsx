@@ -26,7 +26,7 @@ const Navbar = () => {
               type="text"
               placeholder="Search your favorite courses"
             />
-            <MagnifyingGlassIcon className="w-6 h-6 absolute bottom-1/4 left-2" />
+            <MagnifyingGlassIcon className="w-6 h-6 absolute bottom-1/4 left-2 cursor-pointer" />
           </label>
         </div>
 

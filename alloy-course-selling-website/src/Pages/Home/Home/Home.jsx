@@ -2,6 +2,7 @@ import Banner from "../Banner/Banner";
 import FeaturedTopicByCategory from "../FeaturedTopicByCategory/FeaturedTopicByCategory";
 import PopularCourses from "../PopularCourses/PopularCourses";
 import SchoolAndColleges from "../SchoolAndColleges/SchoolAndColleges";
+import StudentThink from "../StudentThink/StudentThink";
 import TopCategories from "../TopCategories/TopCategories";
 
 
@@ -13,6 +14,7 @@ const Home = () => {
             <FeaturedTopicByCategory></FeaturedTopicByCategory>
             {/* <PopularCourses></PopularCourses> */}
             <SchoolAndColleges></SchoolAndColleges>
+            <StudentThink></StudentThink>
         </div>
     );
 };

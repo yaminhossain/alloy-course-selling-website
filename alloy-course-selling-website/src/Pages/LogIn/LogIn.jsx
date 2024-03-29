@@ -1,5 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import loginPageImage from "../../../public/images/loginpage images/login page.png"
+import googleLogo from"../../../public/images/logos/google logo.png"
+import facebookLogo from"../../../public/images/logos/facebook logo.svg"
 
 const LogIn = () => {
   return (
@@ -9,7 +12,7 @@ const LogIn = () => {
       <div className="flex justify-center items-center">
         {/* Child 1 */}
         <div className="bg-[#FBF4EC] lg:h-[520px] flex justify-center">
-          <img className="w-full my-auto mx-0" src="/public/images/loginpage images/login page.png" />
+          <img className="w-full my-auto mx-0" src={loginPageImage}/>
         </div>
         {/* Child 2 */}
         <div className="p-5">
@@ -51,14 +54,14 @@ const LogIn = () => {
           <button className="border-2 border-black text-[#27262A] py-3 w-96 rounded-full mt-3 ">
             <img
               className="inline w-6 h-6 mr-2"
-              src="/public/images/logos/google logo.png"
+              src={googleLogo}
             />
             Log in with Google
           </button>
           <button className="block border-2 border-black text-[#27262A] py-3 w-96 rounded-full mt-3">
             <img
               className="w-6 h-6 mr-2 inline"
-              src="/public/images/logos/facebook logo.svg"
+              src={facebookLogo}
             />
             Log in with Facebook
           </button>

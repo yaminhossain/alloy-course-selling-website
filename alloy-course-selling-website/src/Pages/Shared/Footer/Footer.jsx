@@ -1,6 +1,11 @@
 import { ExclamationCircleIcon } from "@heroicons/react/24/outline";
 import { Link } from "react-router-dom";
 
+import facebookLogo from"../../../../public/images/logos/facebook logo.svg"
+import instagramLogo from"../../../../public/images/logos/instagram logo.svg"
+import twitterLogo from "../../../../public/images/logos/twitter logo.svg"
+import storeLogo from "../../../../public/images/logos/playstore and app store.png"
+
 const Footer = () => {
   return (
     <div>
@@ -15,17 +20,17 @@ const Footer = () => {
           <p className="mb-4">Follow us on</p>
           <img
             className="w-8 cursor-pointer inline-block"
-            src="/public/images/logos/facebook logo.png"
+            src={facebookLogo}
             alt=""
           />
           <img
             className="w-8 mx-5  cursor-pointer inline-block"
-            src="/public/images/logos/instagram logo.svg"
+            src={instagramLogo}
             alt=""
           />
           <img
             className="w-8 cursor-pointer inline-block"
-            src="/public/images/logos/twitter logo.svg"
+            src={twitterLogo}
             alt=""
           />
         </div>
@@ -45,7 +50,7 @@ const Footer = () => {
         </div>
         <div className="w-36">
           <h1 className="mb-4">Get Alloy App</h1>
-          <img className="cursor-pointer" src="/public/images/logos/playstore and app store.png" alt="" />
+          <img className="cursor-pointer" src={storeLogo} alt="" />
         </div>
       </div>
       </div>
