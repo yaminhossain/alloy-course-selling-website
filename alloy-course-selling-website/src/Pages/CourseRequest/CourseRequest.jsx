@@ -1,6 +1,5 @@
-import React from 'react';
 
-const CourseResquest = () => {
+const CourseRequest = () => {
     return (
         <div className='text-4xl text-center'>
            Course Request: This page is under construction
@@ -8,4 +7,4 @@ const CourseResquest = () => {
     );
 };
 
-export default CourseResquest;
+export default CourseRequest;
