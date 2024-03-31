@@ -67,7 +67,7 @@ const FeaturedTopicByCategory = () => {
           </div>
         </div>
         <div className="grid justify-center mt-8">
-          <button className="text-center border px-3 py-2 border-zinc-950  ">Explore More</button>
+          <button className="text-center border px-3 py-2 border-zinc-950 hover:bg-black hover:text-white">Explore More</button>
         </div>
       </div>
     </>
