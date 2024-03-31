@@ -75,10 +75,9 @@ const PopularCourses = () => {
                                 key={item.id}
                                 item={item}
                             >
-                                <PopularCourseComponent
-                                    key={item.id}
-                                    item={item}
-                                ></PopularCourseComponent>
+                                <PopularCourseComponent key={item.id}item={item}>
+                                    
+                                </PopularCourseComponent>
                             </SwiperSlide>
                         ))}
                     </Swiper>
