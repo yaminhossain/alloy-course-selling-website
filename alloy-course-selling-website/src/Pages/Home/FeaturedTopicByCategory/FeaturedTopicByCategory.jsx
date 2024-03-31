@@ -3,7 +3,7 @@
 const FeaturedTopicByCategory = () => {
   return (
     <>
-      <div className="px-40 -[#1B4242] bg-[#F5F5F5] py-5 ">
+      <div className="px-40 -[#1B4242] bg-[#F5F5F5] py-8 my-20">
         <h2 className="mb-10 text-center text-3xl border-b-4 rounded-b-lg w-96  mx-auto ">Featured Topic By Category</h2>
         <div>
           <div className="grid grid-cols-4 justify-center  gap-x-20 mb-5">
@@ -66,7 +66,7 @@ const FeaturedTopicByCategory = () => {
             
           </div>
         </div>
-        <div className="grid justify-center mt-4">
+        <div className="grid justify-center mt-8">
           <button className="text-center border px-3 py-2 border-zinc-950  ">Explore More</button>
         </div>
       </div>

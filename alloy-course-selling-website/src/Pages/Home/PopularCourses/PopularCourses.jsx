@@ -14,6 +14,7 @@ import 'swiper/css/pagination';
 import { Keyboard, Scrollbar, Navigation, Pagination } from 'swiper/modules';
 import { useEffect, useState } from 'react';
 import PopularCourseComponent from './PopularCourseComponent/PopularCourseComponent';
+import Loading from '../../../Components/Loading/Loading';
 
 const PopularCourses = () => {
 
@@ -39,51 +40,59 @@ const PopularCourses = () => {
     }, []);
 
     console.log(jsonData);
+
     return (
-        <div>
-            <h2 className="text-center text-3xl my-6 border-b-4 rounded-b-lg w-60  mx-auto  ">Popular Courses</h2>
 
-            <>
-                <div className='mt-20'>
-                    <Swiper
-                        slidesPerView={3.5}
-                        centeredSlides={false}
-                        slidesPerGroupSkip={2}
-                        grabCursor={true}
-                        keyboard={{
-                            enabled: true,
-                        }}
-                        breakpoints={{
-                            769: {
-                                slidesPerView: 2,
-                                slidesPerGroup: 2,
-                            },
-                        }}
-                        scrollbar={true}
-                        navigation={true}
-                        pagination={{
-                            clickable: true,
-                        }}
-                        modules={[Keyboard, Scrollbar, Navigation, Pagination]}
-                        className="mySwiper"
-                    >
+        jsonData ?
+            <div className='mx-40 h-full'>
+                <h2 className="text-center text-3xl my-6 border-b-4 rounded-b-lg w-60  mx-auto  ">Popular Courses</h2>
 
-                        {/* mapping---------- */}
+                <>
+                    <div className='mt-10'>
+                        <Swiper
+                            slidesPerView={3}
+                            centeredSlides={false}
+                            slidesPerGroupSkip={10}
+                            grabCursor={true}
+                            keyboard={{
+                                enabled: true,
+                            }}
+                            breakpoints={{
+                                10: {
+                                    slidesPerView: 3,
+                                    slidesPerGroup: 3,
+                                },
+                            }}
+                            scrollbar={true}
+                            navigation={true}
+                            pagination={{
+                                clickable: true,
+                            }}
+                            modules={[Keyboard, Scrollbar, Navigation, Pagination]}
+                            className="mySwiper"
+                        >
 
-                        {jsonData.map(item => (
-                            <SwiperSlide
-                                key={item.id}
-                                item={item}
-                            >
-                                <PopularCourseComponent key={item.id}item={item}>
-                                    
-                                </PopularCourseComponent>
-                            </SwiperSlide>
-                        ))}
-                    </Swiper>
-                </div>
-            </>
-        </div>
+                            {/* mapping---------- */}
+
+                            {jsonData?.map(item => (
+                                <SwiperSlide
+                                    key={item.id}
+                                    item={item}
+                                >
+                                    <PopularCourseComponent key={item.id} item={item}>
+
+                                    </PopularCourseComponent>
+                                </SwiperSlide>
+                            ))}
+                        </Swiper>
+                    </div>
+                </>
+            </div>
+            :
+            <div>
+                <Loading></Loading>
+            </div>
+
     );
 };
 

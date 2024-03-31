@@ -1,3 +1,5 @@
+import { FaRegArrowAltCircleRight } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const RequestCourses = () => {
     return (
@@ -16,7 +18,13 @@ const RequestCourses = () => {
                     request their favorable  courses.
                     Our wonderful teachers will help you any time
                 </h2>
-                <button className="bg-black text-white mt-4 border rounded-lg px-3 py-4 text-[12px] ">Request Courses</button>
+
+                <Link>
+                    <button className="bg-black text-white mt-4 border rounded-lg px-3 py-3 text-[12px] flex items-center gap-3">
+                        Request Courses
+                        <FaRegArrowAltCircleRight className="text-lg"></FaRegArrowAltCircleRight>
+                    </button>
+                </Link>
             </div>
 
         </div>

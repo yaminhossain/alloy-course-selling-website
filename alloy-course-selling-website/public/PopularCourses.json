@@ -86,7 +86,7 @@
         "ratings": 4.7,
         "enrolledCount": 1800,
         "coursePrice": 49.99,
-        "features": ["Practical Exercises", "Case Studies", "Certification Exam Prep"]
+        "features": ["React", "Node JS", "MongoDB", "Node JS"]
       },
       {
         "id": 7,
@@ -101,7 +101,8 @@
         "ratings": 4.8,
         "enrolledCount": 1600,
         "coursePrice": 59.99,
-        "features": ["React", "Node JS", "MongoDB", "Node JS"]      },
+        "features": ["React", "Node JS", "MongoDB", "Node JS"]     
+      },
       {
         "id": 8,
         "teacherName": "Matthew Turner",

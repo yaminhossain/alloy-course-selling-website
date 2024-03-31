@@ -1,3 +1,5 @@
+import { FaRegArrowAltCircleRight } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const WonderfulJourney = () => {
     return (
@@ -11,7 +13,12 @@ const WonderfulJourney = () => {
                 <p className="text-[70px] font-extrabold  -mt-8">Your Wonderful</p>
                 <p className="text-[70px] font-extrabold  -mt-8">Journey</p>
 
-                <button className="bg-black text-white mt-4 border rounded-lg px-3 py-2 text-[12px] ">Become a Student</button>
+                <Link>
+                    <button className="bg-black text-white mt-4 border rounded-lg px-3 py-3 text-[12px] flex items-center gap-3">
+                        Become a Student
+                        <FaRegArrowAltCircleRight className="text-lg"></FaRegArrowAltCircleRight>
+                    </button>
+                </Link>
             </div>
 
         </div>

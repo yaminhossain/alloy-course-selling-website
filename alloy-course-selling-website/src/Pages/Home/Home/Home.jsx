@@ -3,7 +3,7 @@ import FeaturedTopicByCategory from "../FeaturedTopicByCategory/FeaturedTopicByC
 import InstructorJourney from "../InstructorJourney/InstructorJourney";
 import JoinOurCommunity from "../JoinOurCommunity/JoinOurCommunity";
 import RequestCourses from "../RequestCourses /RequestCourses";
-// import PopularCourses from "../PopularCourses/PopularCourses";
+import PopularCourses from "../PopularCourses/PopularCourses";
 import SchoolAndColleges from "../SchoolAndColleges/SchoolAndColleges";
 import Sponsor from "../Sponsor/Sponsor";
 import StudentThink from "../StudentThink/StudentThink";
@@ -17,7 +17,7 @@ const Home = () => {
             <Banner></Banner>
             <TopCategories></TopCategories>
             <FeaturedTopicByCategory></FeaturedTopicByCategory>
-            {/* <PopularCourses></PopularCourses> */}
+            <PopularCourses></PopularCourses>
             <SchoolAndColleges></SchoolAndColleges>
             <StudentThink></StudentThink>
             <RequestCourses></RequestCourses>
