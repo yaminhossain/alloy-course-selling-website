@@ -5,7 +5,7 @@ import requestCourse from "../../../../public/images/homepage images/RequestCour
 const RequestCourses = () => {
   return (
     <div className="flex justify-center  bg-[#F5F5F5] py-10 mt-20">
-      <div className="max-w-7xl flex items-center gap-80">
+      <div className="flex items-center item-center justify-center gap-80">
         <div>
           <img
             className="h-[520px]"
