@@ -55,7 +55,26 @@ const AddCourse = () => {
                         <input className='border border-black mt-3 ps-3' {...register('courseHours', { required: true })} placeholder="courseHours" />
                         {errors.lastName && <p>courseHours is required.</p>}
                         <input className='border border-black mt-3 ps-3' {...register('coursePrice', { required: true })} placeholder="coursePrice" />
+                     
                         {errors.age && <p>courseHours is coursePrice.</p>}
+                        <input className='border border-black mt-3 ps-3' {...register('courseTitle', { required: true })} placeholder="courseTitle" />
+                        {errors.lastName && <p>courseTitle is required.</p>}
+                        <input className='border border-black mt-3 ps-3' {...register('enrolledCount', { required: true })} placeholder="enrolledCount" />
+                        {errors.lastName && <p>enrolledCount is required.</p>}
+                        <input className='border border-black mt-3 ps-3' {...register('id', { required: true })} placeholder="id" />
+                        {errors.lastName && <p>id is required.</p>}
+                        <input className='border border-black mt-3 ps-3' {...register('milestones', { required: true })} placeholder="milestones" />
+                        {errors.lastName && <p>milestones is required.</p>}
+                        <input className='border border-black mt-3 ps-3' {...register('modules', { required: true })} placeholder="modules" />
+                        {errors.lastName && <p>modules is required.</p>}
+                        <input className='border border-black mt-3 ps-3' {...register('numberOfQuizzes', { required: true })} placeholder="numberOfQuizzes" />
+                        {errors.lastName && <p>numberOfQuizzes is required.</p>}
+                        <input className='border border-black mt-3 ps-3' {...register('numberOfVideos', { required: true })} placeholder="numberOfVideos" />
+                        {errors.lastName && <p>numberOfVideos is required.</p>}
+                        <input className='border border-black mt-3 ps-3' {...register('ratings', { required: true })} placeholder="ratings" />
+                        {errors.lastName && <p>ratings is required.</p>}
+                        <input className='border border-black mt-3 ps-3' {...register('teacherName', { required: true })} placeholder="teacherName" />
+                        {errors.lastName && <p>teacherName is required.</p>}
                     </div>
 
 
