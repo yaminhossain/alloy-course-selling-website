@@ -2,7 +2,7 @@ import { FaRegArrowAltCircleRight } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import requestCourse from "../../../../public/images/homepage images/RequestCourses.png"
 
-const RequestCourses = () => {
+const ReqCourses = () => {
   return (
     <div className="flex justify-center  bg-[#F5F5F5] py-10 mt-20">
       <div className="flex items-center item-center justify-center gap-80">
@@ -35,4 +35,4 @@ const RequestCourses = () => {
   );
 };
 
-export default RequestCourses;
+export default ReqCourses;
