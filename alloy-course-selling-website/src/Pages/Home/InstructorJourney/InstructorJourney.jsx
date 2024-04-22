@@ -1,5 +1,6 @@
 import { FaRegArrowAltCircleRight } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import instructor from "../../../../public/images/homepage images/instructor journey.png"
 
 const InstructorJourney = () => {
     return (
@@ -17,7 +18,7 @@ const InstructorJourney = () => {
                 </Link>
             </div>
             <div>
-                <img className="h-[520px]" src="../../../../public/images/homepage images/instructor journey.png" alt="" />
+                <img className="h-[520px]" src={instructor} alt="" />
             </div>
         </div>
     );
