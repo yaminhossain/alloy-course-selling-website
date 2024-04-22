@@ -12,6 +12,8 @@ import CourseRequest from "../Pages/CourseRequest/CourseRequest";
 import Instructor from "../Pages/Instructor/Instructor";
 import MyLearning from "../Pages/MyLearning/MyLearning";
 import BookMarks from "../Pages/BookMarks/BookMarks";
+import AddCourse from "../Pages/Instructor/AddCourse/AddCourse";
+import YourCourses from "../Pages/Instructor/YourCourses/YourCourses";
 
   export const router = createBrowserRouter([
     {
@@ -61,6 +63,14 @@ import BookMarks from "../Pages/BookMarks/BookMarks";
         {
           path : "/bookMarks",
           element : <BookMarks></BookMarks>
+        },
+        {
+          path : "/addCourse",
+          element : <AddCourse></AddCourse>
+        },
+        {
+          path : "/yourCourse",
+          element : <YourCourses></YourCourses>
         },
         
       ]

@@ -82,6 +82,21 @@ const PopularCourses = () => {
                                     <PopularCourseComponent key={item.id} item={item}>
 
                                     </PopularCourseComponent>
+
+                                    {/* --------------- alternative-------------------- */}
+                                    {/* <PopularCourseComponent key={item.id} 
+                                    courseBanner={item.courseBanner}
+                                    courseHours={item.courseHours}
+                                    coursePrice={item.coursePrice}
+                                    courseTitle={item.courseTitle}
+                                    enrolledCount={item.enrolledCount}
+                                    id={item.id}
+                                    milestones={item.milestones}
+                                    modules={item.modules}
+                                    >
+
+                                    </PopularCourseComponent> */}
+                                    {/* -----------------alternative--------------------- */}
                                 </SwiperSlide>
                             ))}
                         </Swiper>
