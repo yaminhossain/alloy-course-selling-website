@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-
-const YourCourses = () => {
-=======
 import { useEffect, useState } from "react";
 
 const YourCourses = () => {
@@ -28,7 +24,6 @@ const YourCourses = () => {
 
     console.log(courses?courses:"data nai");
 
->>>>>>> 9913c64239ae86dcecb6c47b1d12e25654192d55
     return (
         <div className="text-center">
             <p>YourCourses</p>
