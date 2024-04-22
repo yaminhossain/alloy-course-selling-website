@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider/AuthProvider";
@@ -22,6 +23,8 @@ const Instructor = () => {
             </button>
           </Link>
 =======
+=======
+>>>>>>> 4bd97bd05e4d68f9202d37c854e09ef6dd7cc3ab
 import { Link } from "react-router-dom";
 
 const Instructor = () => {
@@ -44,6 +47,9 @@ const Instructor = () => {
                 </div>
             </div>
             {/* ------------------------------------------- */}
+<<<<<<< HEAD
+>>>>>>> 4bd97bd05e4d68f9202d37c854e09ef6dd7cc3ab
+=======
 >>>>>>> 4bd97bd05e4d68f9202d37c854e09ef6dd7cc3ab
         </div>
         <div className="grid justify-center my-8">
