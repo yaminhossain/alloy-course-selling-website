@@ -1,8 +1,9 @@
 
 // import PropTypes from 'prop-types';
+// const PopularCourseComponent = ({ modules,courseBanner,courseHours,coursePrice,courseTitle,enrolledCount,id,milestones }) => {
 const PopularCourseComponent = ({ item }) => {
     const { id, courseBanner, courseHours, coursePrice, courseTitle, enrolledCount, features, milestones, modules, numberOfQuizzes, numberOfVideos, ratings, teacherName } = { item };
-    console.log(item);
+    // console.log(item);
     return (
         <div>
             <div className=" w-72 bg-base-100 shadow-xl p-2 border mb-10 ms-10">
@@ -52,6 +53,22 @@ const PopularCourseComponent = ({ item }) => {
                 </div>
             </div>
         </div>
+
+
+        // -------alt---------------
+        // <div>
+        //     <img src={courseBanner} alt="" />
+        //     <p>{modules}</p>
+        //     <p>{courseHours}</p>
+        //     <p>{coursePrice}</p>
+        //     <p>{courseTitle}</p>
+        //     <p>{enrolledCount}</p>
+        //     <p>{id}</p>
+        //     <p>{milestones}</p>
+            
+        // </div>
+        // -------alt---------------
+
     );
 };
 
