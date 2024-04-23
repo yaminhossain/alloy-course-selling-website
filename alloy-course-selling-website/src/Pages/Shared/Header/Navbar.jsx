@@ -9,17 +9,25 @@ import Themes from "../../../Components/Themes/Themes";
 
 // Css file for this page
 import "./navbar.css";
+import { useContext,  } from "react";
+import { AuthContext } from "../../../Provider/AuthProvider/AuthProvider";
+import DropdownMenu from "../../../Components/DropdownMenu/DropdownMenu";
 
 // The component starts from here
 const Navbar = () => {
+
+
+  const user = useContext(AuthContext);
+  console.log(user)
+
   return (
     <div >
       <div className="flex justify-between my-5 mx-8 items-center">
         {/* Child flex-1 */}
         <div className="flex gap-5 items-center ">
-        <Link className="text-4xl font-bold" to="/">
-          <h2 className="dark:text-white cursor-pointer">Alloy</h2>
-        </Link>
+          <Link className="text-4xl font-bold" to="/">
+            <h2 className="dark:text-white cursor-pointer">Alloy</h2>
+          </Link>
           <button className="cursor-pointer dark:text-white">Categories</button>
           <label className="search-field relative">
             <input
@@ -37,7 +45,7 @@ const Navbar = () => {
           <Link to="/community" className="dark:text-white">Community</Link>
           <Link to="/courseRequest" className="dark:text-white">Course Request</Link>
 
-          
+
 
           <Link to="instructor" className="dark:text-white">Instructor</Link>
           <Link to="myLearning" className="dark:text-white">My Learning</Link>
@@ -50,11 +58,28 @@ const Navbar = () => {
             <Link to="bookMarks"></Link>
           </BookmarkIcon>
           <BellIcon className="w-6 h-6 cursor-pointer dark:text-white"></BellIcon>
-          <Link to="login">
+
+          {
+            user ?
+              <>
+                <button >
+                  <DropdownMenu></DropdownMenu>
+                </button>
+              </>
+              :
+              <>
+                <Link to="login">
+                  <button className="border-2 border-black dark:border-white dark:text-white w-auto h-auto px-6 py-3 font-bold hover:text-white dark:hover:text-black hover:bg-black dark:hover:bg-white ease-in duration-100">
+                    Log In
+                  </button>
+                </Link>
+              </>
+          }
+          {/* <Link to="login">
             <button className="border-2 border-black dark:border-white dark:text-white w-auto h-auto px-6 py-3 font-bold hover:text-white dark:hover:text-black hover:bg-black dark:hover:bg-white ease-in duration-100">
               Log In
             </button>
-          </Link>
+          </Link> */}
         </div>
 
         {/* <Link to="page1">

@@ -63,12 +63,12 @@ const FeaturedTopicByCategory = () => {
               <h2 className="text-[#5624D0]  ">Drawing</h2>
               <h2 className="text-[#6A6F73]">2,410,849 learners</h2>
             </div>
-            
-            
+
+
           </div>
         </div>
         <div className="grid justify-center mt-8">
-        <Link to="/addCourse"><button className="text-center border px-3 py-2 border-zinc-950 hover:bg-black hover:text-white">Explore More</button></Link>
+          <Link to="/addCourse"><button className="text-center border px-3 py-2 border-zinc-950 hover:bg-black hover:text-white">Explore More</button></Link>
         </div>
       </div>
     </>

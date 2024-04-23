@@ -14,6 +14,7 @@ import MyLearning from "../Pages/MyLearning/MyLearning";
 import BookMarks from "../Pages/BookMarks/BookMarks";
 import AddCourse from "../Pages/Instructor/AddCourse/AddCourse";
 import YourCourses from "../Pages/Instructor/YourCourses/YourCourses";
+import LoggedInHome from "../Pages/Home/LoggedInHome/LoggedInHome";
 
   export const router = createBrowserRouter([
     {
@@ -71,6 +72,10 @@ import YourCourses from "../Pages/Instructor/YourCourses/YourCourses";
         {
           path : "/yourCourse",
           element : <YourCourses></YourCourses>
+        },
+        {
+          path : "/loggedInHome",
+          element : <LoggedInHome></LoggedInHome>
         },
         
       ]
