@@ -1,19 +1,45 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import loginPageImage from "../../../public/images/loginpage images/login page.png";
 import googleLogo from "../../../public/images/logos/google logo.png";
 import facebookLogo from "../../../public/images/logos/facebook logo.svg";
-import { getAuth, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
+import {
+  getAuth,
+  GoogleAuthProvider,
+  signInWithPopup,
+  signInWithEmailAndPassword,
+} from "firebase/auth";
 import { app } from "../../firebase/config";
 
 const auth = getAuth(app);
 const provider = new GoogleAuthProvider();
 
+/* The LogIn Component Starts from here */
+
 const LogIn = () => {
+  const navigate = useNavigate();
+
+  /* onsubmit event handler */
   const loginHandler = (event) => {
     event.preventDefault();
     const form = event.target;
-    console.log(form);
+
+    const email = form.email.value;
+    const password = form.password.value;
+
+
+    signInWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+        const user = userCredential.user;
+        /* If logged in the switch the route */
+        if (user) {
+          navigate("/myLearning");
+        }
+      })
+      .catch((error) => {
+        const errorMessage = error.message;
+        console.log(errorMessage);
+      });
   };
 
   /* Google Authentication */
@@ -21,7 +47,10 @@ const LogIn = () => {
     signInWithPopup(auth, provider)
       .then((result) => {
         const credential = result;
-        console.log(credential.user);
+        /* If logged in the switch the route */
+        if (credential) {
+          navigate("/myLearning");
+        }
       })
       .catch((error) => {
         console.log(error, error.message);
@@ -89,7 +118,7 @@ const LogIn = () => {
             </button>
             <button
               type="submit"
-              className="block border-2 border-black dark:border-white text-[#27262A] dark:text-white py-3 w-96 rounded-full mt-3"
+              className="block hidden border-2 border-black dark:border-white text-[#27262A] dark:text-white py-3 w-96 rounded-full mt-3"
             >
               <img className="w-6 h-6 mr-2 inline" src={facebookLogo} />
               Log in with Facebook
