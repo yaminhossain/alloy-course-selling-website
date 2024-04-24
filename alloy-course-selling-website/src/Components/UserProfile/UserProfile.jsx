@@ -57,11 +57,13 @@ const UserProfile = () => {
             </div>
           </div>
           <div >
-            <Link to={""}>My Account</Link>
-            <div>
-            <PowerIcon className="w-4 inline-block"></PowerIcon>
-            <button onClick={logOutHandler}>Log Out</button>
-            </div>
+            <button  className="w-full  p-4 border-b-2"><Link to={"/"}>My Account</Link></button>
+            <button  className="w-full  p-4 border-b-2"><Link to={"/"}>My Chart</Link></button>
+            <button  className="w-full  p-4"><Link to={"/"}>Bookmarks</Link></button>
+            <button className="w-full bg-violet-600 hover:bg-violet-500 p-4 text-white flex justify-center items-center gap-4" onClick={logOutHandler}>
+            <PowerIcon className="w-5 inline-block"></PowerIcon>
+            <p >Log Out</p>
+            </button>
           </div>
         </div>
       )}
