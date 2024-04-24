@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import loginPageImage from "../../../public/images/loginpage images/login page.png";
 import googleLogo from "../../../public/images/logos/google logo.png";
 import facebookLogo from "../../../public/images/logos/facebook logo.svg";
@@ -14,27 +14,31 @@ import { app } from "../../firebase/config";
 const auth = getAuth(app);
 const provider = new GoogleAuthProvider();
 
+/* The LogIn Component Starts from here */
+
 const LogIn = () => {
+  const navigate = useNavigate();
+
   /* onsubmit event handler */
   const loginHandler = (event) => {
     event.preventDefault();
     const form = event.target;
-    console.log(form);
+
     const email = form.email.value;
     const password = form.password.value;
-    console.log(email, password);
-    
+
+
     signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
- 
         const user = userCredential.user;
-        console.log(user)
-      
+        /* If logged in the switch the route */
+        if (user) {
+          navigate("/myLearning");
+        }
       })
       .catch((error) => {
-        
         const errorMessage = error.message;
-        console.log(errorMessage)
+        console.log(errorMessage);
       });
   };
 
@@ -43,7 +47,10 @@ const LogIn = () => {
     signInWithPopup(auth, provider)
       .then((result) => {
         const credential = result;
-        console.log(credential.user);
+        /* If logged in the switch the route */
+        if (credential) {
+          navigate("/myLearning");
+        }
       })
       .catch((error) => {
         console.log(error, error.message);

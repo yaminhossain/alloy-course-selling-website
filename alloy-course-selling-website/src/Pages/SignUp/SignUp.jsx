@@ -1,43 +1,55 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import loginPageImage from "../../../public/images/loginpage images/login page.png";
 import googleLogo from "../../../public/images/logos/google logo.png";
 import facebookLogo from "../../../public/images/logos/facebook logo.svg";
-
-import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+import {
+  getAuth,
+  createUserWithEmailAndPassword,
+  updateProfile,
+} from "firebase/auth";
 import { app } from "../../firebase/config";
+import defaultUserProfile from "../../images/defaultUser.png";
 
 const auth = getAuth(app);
 
 const SignUp = () => {
-
+  /* use navigate from react router dom */
+  const navigate = useNavigate();
   /*submit Event Handler */
-  const signupHandler=(event)=>{
-
+  const signUpHandler = (event) => {
     event.preventDefault();
     // const form = event.target;
     const email = event.target.email.value;
     const password = event.target.password.value;
-    console.log(email,password);
+    const name = event.target.text.value;
+    /* console.log(email, password, name); */
+
+    /* create a use with email and password */
     createUserWithEmailAndPassword(auth, email, password)
-    .then((userCredential) => {
-     
-      const user = userCredential.user;
-      console.log(user);
-  
-    })
-    .catch((error) => {
-    
-      const errorMessage = error.message;
+      .then((userCredential) => {
+        const user = userCredential.user;
+        // console.log(user);
+        navigate("/myLearning");
 
-      console.log(errorMessage)
+        /* Default name and image while sign up with email and password */
+        updateProfile(user, {
+          displayName: name,
+          photoURL: defaultUserProfile,
+        })
+          .then(() => {
+            console.log("Profile updated!");
+          })
+          .catch((error) => {
+            console.log("An error occurred!", error.message);
+          });
+      })
+      .catch((error) => {
+        const errorMessage = error.message;
 
-    });
-
-  }
-
-
-
+        console.log(errorMessage);
+      });
+  };
 
   return (
     /* The whole container */
@@ -57,10 +69,8 @@ const SignUp = () => {
             Get started by creating a free account
           </p>
 
-
-
           {/* form starts from here */}
-          <form onSubmit={signupHandler}>
+          <form onSubmit={signUpHandler}>
             <label htmlFor="name">
               <p className="pl-2  mt-3 dark:text-white">Name</p>
             </label>
@@ -94,9 +104,11 @@ const SignUp = () => {
               placeholder="Enter a strong password"
             />
             <label htmlFor="confirm-password">
-              <p className="pl-2  mt-3 dark:text-white hidden">Confirm Password</p>{" "}
+              <p className="pl-2  mt-3 dark:text-white hidden">
+                Confirm Password
+              </p>{" "}
             </label>
-           {/*  <input
+            {/*  <input
               className="w-96 border-2 border-black rounded-full h-12 pl-4 focus:outline-none hidden"
               type="password"
               name="password"
@@ -110,7 +122,7 @@ const SignUp = () => {
                 Forgot Password?
               </Link>
             </div>
-            
+
             <label htmlFor="sign-up"></label>
             <input
               type="submit"

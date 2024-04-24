@@ -11,14 +11,14 @@ import Themes from "../../../Components/Themes/Themes";
 import "./navbar.css";
 import { useContext,  } from "react";
 import { AuthContext } from "../../../Provider/AuthProvider/AuthProvider";
-import DropdownMenu from "../../../Components/DropdownMenu/DropdownMenu";
+import UserProfile from "../../../Components/UserProfile/UserProfile";
 
 // The component starts from here
 const Navbar = () => {
 
 
   const user = useContext(AuthContext);
-  console.log(user)
+  // console.log(user)
 
   return (
     <div >
@@ -63,7 +63,7 @@ const Navbar = () => {
             user ?
               <>
                 <button >
-                  <DropdownMenu></DropdownMenu>
+                  <UserProfile></UserProfile>
                 </button>
               </>
               :
