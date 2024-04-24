@@ -24,6 +24,7 @@ const DropdownMenu = () => {
                         
                         <Link to={"/login"}><li>Log in</li></Link>
                         <Link><li>Log out</li></Link>
+                        <Link to={"/applyInstructor"}><li>Apply Instructor</li></Link>
                     </ul>
                 </div>
             )}
