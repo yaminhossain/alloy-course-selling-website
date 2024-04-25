@@ -27,7 +27,6 @@ const LogIn = () => {
     const email = form.email.value;
     const password = form.password.value;
 
-
     signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         const user = userCredential.user;
@@ -85,6 +84,7 @@ const LogIn = () => {
               name="email"
               id=""
               placeholder="example@mail.com"
+              required
             />
             <label htmlFor="password">
               <p className="pl-2  mt-3 dark:text-white">Password</p>{" "}
@@ -95,6 +95,7 @@ const LogIn = () => {
               name="password"
               id=""
               placeholder="Please enter your password"
+              required
             />
             <br />
             <div className="text-right pt-2">
