@@ -26,7 +26,7 @@ const AddCourse = () => {
         e.preventDefault();
         console.log(data);
         try {
-            const response = await fetch('http://localhost:8000/formCourses', {
+            const response = await fetch('https://server-course-selling.vercel.app/formCourses', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

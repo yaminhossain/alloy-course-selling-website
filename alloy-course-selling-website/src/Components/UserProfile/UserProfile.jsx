@@ -57,6 +57,7 @@ const UserProfile = () => {
             </div>
           </div>
           <div >
+            <Link  to={"/dashboard"}><button className="w-full  p-4 border-b-2">Dashboard</button></Link>
             <Link  to={"/applyInstructor"}><button className="w-full  p-4 border-b-2">Apply Instructor</button></Link>
             <button className="w-full  p-4 border-b-2"><Link to={"/"}>My Account</Link></button>
             <button className="w-full  p-4 border-b-2"><Link to={"/"}>My Chart</Link></button>

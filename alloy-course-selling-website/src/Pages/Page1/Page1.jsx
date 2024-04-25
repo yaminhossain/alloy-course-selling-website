@@ -13,7 +13,7 @@ const Page1 = () => {
     const onSubmit = async (data) => {
         console.log(data);
         try {
-            const response = await fetch('http://localhost:8000/formCourses', {
+            const response = await fetch('formCourses', {
               method: 'POST',
               headers: {
                 'Content-Type': 'application/json',

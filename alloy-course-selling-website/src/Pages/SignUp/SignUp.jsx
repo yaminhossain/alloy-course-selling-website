@@ -1,4 +1,4 @@
-import React from "react";
+// import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import loginPageImage from "../../../public/images/loginpage images/login page.png";
 import googleLogo from "../../../public/images/logos/google logo.png";
@@ -10,6 +10,7 @@ import {
 } from "firebase/auth";
 import { app } from "../../firebase/config";
 import defaultUserProfile from "../../images/defaultUser.png";
+import Swal from "sweetalert2";
 
 const auth = getAuth(app);
 
@@ -23,10 +24,13 @@ const SignUp = () => {
     const email = event.target.email.value;
     const password = event.target.password.value;
     const name = event.target.text.value;
-    /* console.log(email, password, name); */
+    // role
+    const role = event.target.role.value;
 
+     /* console.log(email, password, name,role); */
+     console.log(email, password, name,role);
     /* create a use with email and password */
-    createUserWithEmailAndPassword(auth, email, password)
+    createUserWithEmailAndPassword(auth, email,password)
       .then((userCredential) => {
         const user = userCredential.user;
         // console.log(user);
@@ -36,9 +40,38 @@ const SignUp = () => {
         updateProfile(user, {
           displayName: name,
           photoURL: defaultUserProfile,
+          // role
+          role: role,
         })
           .then(() => {
+
+            // send user data to database.................
+            const insertUser = {name:name, email:email, role:role }
+            console.log(insertUser);
+            fetch('https://server-course-selling.vercel.app/users', {
+                            method: 'POST',
+                            headers: {
+                                'content-type': 'application/json'
+                            },
+                            body: JSON.stringify(insertUser)
+                        })
+                        .then(res => res.json())
+                            .then(data => {
+                                if (data.insertedId) {
+                                    // reset();
+                                    Swal.fire({
+                                        position: 'top-end',
+                                        icon: 'success',
+                                        title: 'User created successfully.',
+                                        showConfirmButton: false,
+                                        timer: 1500
+                                    });
+                                    navigate('/');
+                                }
+                            })
+                            //------------end send user data to database
             console.log("Profile updated!");
+            // console.log(role)
           })
           .catch((error) => {
             console.log("An error occurred!", error.message);
@@ -50,7 +83,7 @@ const SignUp = () => {
         console.log(errorMessage);
       });
   };
-
+  
   return (
     /* The whole container */
     <div className="flex items-center justify-center py-20">
@@ -138,6 +171,23 @@ const SignUp = () => {
               <img className="w-6 h-6 mr-2 inline" src={facebookLogo} />
               Sign up with Facebook
             </button>
+
+
+            {/* role------------- */}
+            <label htmlFor="role">
+              <p className="pl-2  mt-3 dark:text-white hidden">role</p>
+            </label>
+
+            <input
+              className="w-96 border-2 border-black rounded-full h-12 pl-4 focus:outline-none hidden  "
+              type="text"
+              name="role"
+              id=""
+              placeholder="Enter your role"
+              value="student"
+            />
+            {/* end role------------- */}
+
           </form>
 
           <div className="mt-7 dark:text-white">

@@ -13,7 +13,7 @@ const YourCourses = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await fetch('http://localhost:8000/formCourses');
+                const response = await fetch('https://server-course-selling.vercel.app/formCourses');
                 if (!response.ok) {
                     throw new Error('Failed to fetch data');
                 }

@@ -1,8 +1,6 @@
 
 // import PropTypes from 'prop-types';
-// const PopularCourseComponent = ({ modules,courseBanner,courseHours,coursePrice,courseTitle,enrolledCount,id,milestones }) => {
 const PopularCourseComponent = ({ item }) => {
-    const { id, courseBanner, courseHours, coursePrice, courseTitle, enrolledCount, features, milestones, modules, numberOfQuizzes, numberOfVideos, ratings, teacherName } = { item };
     // console.log(item);
     return (
         <div>
@@ -44,7 +42,7 @@ const PopularCourseComponent = ({ item }) => {
                     </div>
                     <div className="grid grid-rows-2 grid-cols-2 gap-2  ">
                         {item?.features?.map(item => (
-                            <p className="border rounded-full ps-2 text-[#5624D0] bg-[#E0E0F8]">{item}</p>
+                            <p key={item.id} className="border rounded-full ps-2 text-[#5624D0] bg-[#E0E0F8]">{item}</p>
 
                         ))}
 
