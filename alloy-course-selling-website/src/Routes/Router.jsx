@@ -16,6 +16,7 @@ import AddCourse from "../Pages/Instructor/AddCourse/AddCourse";
 import YourCourses from "../Pages/Instructor/YourCourses/YourCourses";
 import LoggedInHome from "../Pages/Home/LoggedInHome/LoggedInHome";
 import ApplyInstructor from "../Components/ApplyInstructor/ApplyInstructor";
+import MyAccount from "../Pages/MyAccount/MyAccount";
 
   export const router = createBrowserRouter([
     {
@@ -82,7 +83,12 @@ import ApplyInstructor from "../Components/ApplyInstructor/ApplyInstructor";
           path : "/applyInstructor",
           element : <ApplyInstructor></ApplyInstructor>
         },
+        {
+          path: "/myAccount",
+          element: <MyAccount></MyAccount>
+        }
         
-      ]
+      ],
     },
+   
   ]);
