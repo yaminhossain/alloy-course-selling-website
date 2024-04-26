@@ -26,11 +26,11 @@ const MyAccount = () => {
       
       });
        
-      updatePassword(user, data.newPassword).then(() => {
+   /*    updatePassword(user, data.newPassword).then(() => {
         console.log("Password updated!");
       }).catch((error) => {
         console.log(error.message);
-      });
+      }); */
 
   };
 
@@ -80,7 +80,7 @@ const MyAccount = () => {
                 )}
               </div>
             </div>
-            <div>
+           {/*  <div>
               <label htmlFor="newPassWord" className="text-left text-md ml-4">
                 New Password
               </label>
@@ -98,7 +98,7 @@ const MyAccount = () => {
                   </p>
                 )}
               </div>
-            </div>
+            </div> */}
 
             <button
               className="p-4 mt-2 w-full text-white bg-purple-600 flex justify-center items-center gap-3"
