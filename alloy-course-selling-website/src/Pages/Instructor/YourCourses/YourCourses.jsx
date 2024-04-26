@@ -35,7 +35,7 @@ const YourCourses = () => {
 
     return (
         <div className="text-center">
-            <p className="text-5xl">YourCourses</p>
+            <p className="text-5xl">Your Courses</p>
 
             {courses?.map(item => (
                 <SwiperSlide className=" flex"
