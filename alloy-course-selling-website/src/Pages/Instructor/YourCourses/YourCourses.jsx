@@ -1,19 +1,23 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 // import Loading from "../../../Components/Loading/Loading";
 // import Swiper from "swiper";
 // import { Keyboard, Navigation, Pagination, Scrollbar } from "swiper/modules";
 import { SwiperSlide } from "swiper/react";
 import PopularCourseComponent from "../../Home/PopularCourses/PopularCourseComponent/PopularCourseComponent";
+import { AuthContext } from "../../../Provider/AuthProvider/AuthProvider";
 
 const YourCourses = () => {
 
+    const user = useContext(AuthContext);
+    console.log(user?.email);
     // data fetch..............
     const [courses, setCourses] = useState(null);
-
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await fetch('https://server-course-selling.vercel.app/formCourses');
+                const response = await fetch(`https://assignment-11-serve-site-kdls-4ci5nq6c3-anik12136s-projects.vercel.app/formCourses/${user?.email}`);
+                // const response = await fetch("https://assignment-11-serve-site-kdls-4ci5nq6c3-anik12136s-projects.vercel.app/formCourses");
+                // const response = await fetch(`http://localhost:5000/formCourses/${user?.email}`);
                 if (!response.ok) {
                     throw new Error('Failed to fetch data');
                 }
@@ -25,7 +29,7 @@ const YourCourses = () => {
         };
 
         fetchData();
-    }, []);
+    }, [user]);
 
     console.log(courses ? courses : "data nai");
 

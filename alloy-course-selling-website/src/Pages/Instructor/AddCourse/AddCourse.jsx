@@ -8,7 +8,7 @@ import { AuthContext } from "../../../Provider/AuthProvider/AuthProvider";
 const AddCourse = () => {
 
     const user = useContext(AuthContext);
-    console.log(user?.email)
+    console.log(user)
 
     const {
         register,
@@ -22,11 +22,12 @@ const AddCourse = () => {
         name: 'features', // Name of the array field
     });
 
-    const onSubmit = async (data,e) => {
+    const onSubmit = async (data, e) => {
         e.preventDefault();
         console.log(data);
         try {
-            const response = await fetch('https://server-course-selling.vercel.app/formCourses', {
+            const response = await fetch('https://assignment-11-serve-site-kdls-4ci5nq6c3-anik12136s-projects.vercel.app/formCourses', {
+                // const response = await fetch('http://localhost:5000/formCourses', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -62,37 +63,23 @@ const AddCourse = () => {
                     onSubmit={handleSubmit(onSubmit)}>
                     <div className="grid justify-around gap-5 grid-cols-3">
 
-                        {/*  */}
+                        {/* email */}
                         <div>
                             <input className='border border-black mt-3 ps-3 py-2 rounded-sm text-sm w-60 ' {...register('email',)}
-                                placeholder="Provide image link"
                                 value={user?.email}
                             />
-
                         </div>
-                        {/*  */}
 
+                        {/* name */}
                         <div>
-                            <input className='border border-black mt-3 rounded-sm text-sm w-60 ps-3 py-2 ' {...register('courseBanner', { required: true })} placeholder="Provide image link" />
+                            <input className='border border-black mt-3 text-sm w-60 ps-3 py-2' {...register('teacherName',)}
+                                value={user?.displayName}
+                            />
                             <div>
-                                {errors.courseBanner && <h2 className="text-red-600 text-sm flex">image link is required.</h2>}
+                                {errors.teacherName && <p className="text-red-600 text-sm flex">teacherName is required.</p>}
                             </div>
                         </div>
-
-                        <div>
-                            <input className='border border-black mt-3 ps-3 py-2 rounded-sm text-sm w-60 ' {...register('courseHours', { required: true })} placeholder="Course Hours" />
-                            <div>
-                                {errors.courseHours && <p className="text-red-600 text-sm flex">courseHours is required.</p>}
-                            </div>
-                        </div>
-
-                        <div>
-                            <input className='border border-black mt-3  text-sm w-60 ps-3 py-2' {...register('coursePrice', { required: true })} placeholder="Course Price" />
-                            <div>
-                                {errors.coursePrice && <p className="text-red-600 text-sm flex">courseHours is coursePrice.</p>}
-                            </div>
-                        </div>
-
+                        {/* course title */}
                         <div>
                             <input className='border border-black mt-3  text-sm w-60 ps-3 py-2' {...register('courseTitle', { required: true })} placeholder="Course Title" />
                             <div>
@@ -100,37 +87,52 @@ const AddCourse = () => {
                             </div>
                         </div>
 
-                        {/* <input className='border border-black mt-3 ps-3' {...register('enrolledCount', { required: true })} placeholder="enrolled Count" />
-                        {errors.lastName && <p>enrolledCount is required.</p>} */}
-
+                        {/* image/banner */}
                         <div>
+                            <input className='border border-black mt-3 rounded-sm text-sm w-60 ps-3 py-2 ' {...register('courseBanner', { required: true })} placeholder="image link (course banner image)" />
+                            <div>
+                                {errors.courseBanner && <h2 className="text-red-600 text-sm flex">image link is required.</h2>}
+                            </div>
+                        </div>
+                        {/* course hours */}
+                        <div>
+                            <input className='border border-black mt-3 ps-3 py-2 rounded-sm text-sm w-60 ' {...register('courseHours', { required: true })} placeholder="Course Hours" />
+                            <div>
+                                {errors.courseHours && <p className="text-red-600 text-sm flex">courseHours is required.</p>}
+                            </div>
+                        </div>
+                        
+                        {/* course ID */}
+                        {/* <div>
                             <input className='border border-black mt-3 text-sm w-60 ps-3 py-2' {...register('id', { required: true })} placeholder="course ID" />
                             <div>
                                 {errors.id && <p className="text-red-600 text-sm flex">id is required.</p>}
                             </div>
-                        </div>
+                        </div> */}
 
+
+                        {/* Number of Milestones */}
                         <div>
-                            <input className='border border-black mt-3 text-sm w-60 ps-3 py-2' {...register('milestones', { required: true })} placeholder="Milestones" />
+                            <input className='border border-black mt-3 text-sm w-60 ps-3 py-2' {...register('milestones', { required: true })} placeholder="Number of Milestones" />
                             <div>
                                 {errors.milestones && <p className="text-red-600 text-sm flex">milestones is required.</p>}
                             </div>
                         </div>
-
+                        {/* Number of Modules */}
                         <div>
-                            <input className='border border-black mt-3 text-sm w-60 ps-3 py-2' {...register('modules', { required: true })} placeholder="Modules" />
+                            <input className='border border-black mt-3 text-sm w-60 ps-3 py-2' {...register('modules', { required: true })} placeholder="Number of Modules" />
                             <div>
                                 {errors.modules && <p className="text-red-600 text-sm flex">modules is required.</p>}
                             </div>
                         </div>
-
+                        {/* number of Quizzes */}
                         <div>
                             <input className='border border-black mt-3 text-sm w-60 ps-3 py-2' {...register('numberOfQuizzes', { required: true })} placeholder="Number Of Quizzes" />
                             <div>
                                 {errors.numberOfQuizzes && <p className="text-red-600 text-sm flex">numberOfQuizzes is required.</p>}
                             </div>
                         </div>
-
+                        {/* number of video */}
                         <div>
                             <input className='border border-black mt-3 text-sm w-60 ps-3 py-2' {...register('numberOfVideos', { required: true })} placeholder="Number Of Videos" />
                             <div>
@@ -138,15 +140,18 @@ const AddCourse = () => {
                             </div>
                         </div>
 
+                        {/* course price */}
+                        <div>
+                            <input className='border border-black mt-3  text-sm w-60 ps-3 py-2' {...register('coursePrice', { required: true })} placeholder="Course Price ($)" />
+                            <div>
+                                {errors.coursePrice && <p className="text-red-600 text-sm flex">courseHours is coursePrice.</p>}
+                            </div>
+                        </div>
+
                         {/* <input className='border border-black mt-3 ps-3' {...register('ratings', { required: true })} placeholder="ratings" />
                         {errors.lastName && <p>ratings is required.</p>} */}
 
-                        <div>
-                            <input className='border border-black mt-3 text-sm w-60 ps-3 py-2' {...register('teacherName', { required: true })} placeholder="Teacher Name" />
-                            <div>
-                                {errors.teacherName && <p className="text-red-600 text-sm flex">teacherName is required.</p>}
-                            </div>
-                        </div>
+
                     </div>
 
 
@@ -173,7 +178,7 @@ const AddCourse = () => {
 
                     {/* clear / reload button */}
 
-                    
+
 
                     {/* submit button */}
                     <input className='btn btn-neutral mt-3 hover:bg-green-700 hover:text-white' type="submit" />

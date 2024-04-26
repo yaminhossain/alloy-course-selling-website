@@ -52,21 +52,6 @@ const PopularCourseComponent = ({ item }) => {
             </div>
         </div>
 
-
-        // -------alt---------------
-        // <div>
-        //     <img src={courseBanner} alt="" />
-        //     <p>{modules}</p>
-        //     <p>{courseHours}</p>
-        //     <p>{coursePrice}</p>
-        //     <p>{courseTitle}</p>
-        //     <p>{enrolledCount}</p>
-        //     <p>{id}</p>
-        //     <p>{milestones}</p>
-            
-        // </div>
-        // -------alt---------------
-
     );
 };
 
