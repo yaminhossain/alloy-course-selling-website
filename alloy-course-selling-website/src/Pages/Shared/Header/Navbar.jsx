@@ -49,9 +49,9 @@ const Navbar = () => {
 
           <Link to="instructor" className="dark:text-white">Instructor</Link>
           <Link to="myLearning" className="dark:text-white">My Learning</Link>
-          <LanguageIcon className="w-6 h-6 cursor-pointer dark:text-white"></LanguageIcon>
 
           <Themes></Themes>
+          <LanguageIcon className="w-6 h-6 cursor-pointer dark:text-white"></LanguageIcon>
           <ShoppingCartIcon className=" w-6 h-6 cursor-pointer dark:text-white"></ShoppingCartIcon>
 
           <BookmarkIcon className="w-6 h-6 cursor-pointer dark:text-white">

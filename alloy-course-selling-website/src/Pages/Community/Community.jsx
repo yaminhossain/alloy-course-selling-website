@@ -10,17 +10,16 @@ const Community = () => {
     watch,
     formState: { errors },
   } = useForm();
- 
-  const [formData,setFormData] = useState({});
- 
 
- const onSubmit = (data) => setFormData(data);
+  const [formData, setFormData] = useState({});
+
+  const onSubmit = (data) => setFormData(data);
 
   console.log(watch("example")); // watch input value by passing the name of it
 
   return (
     <div>
-      <div className="min-h-[800px] flex flex-col pt-5 justify-center items-center border">
+      <div className="min-h-[800px] flex flex-col pt-5 justify-center items-center">
         <div className="px-8 bg-slate-50 rounded-md max-w-[600px]">
           <h1 className="text-5xl mb-20">Ask a public question</h1>
           <form onSubmit={handleSubmit(onSubmit)}>
@@ -53,23 +52,39 @@ const Community = () => {
               </label>
               <br />
 
-              <textarea  className="w-full h-52 border-2 border-black rounded-lg ps-4 focus:outline-none mt-3"name="questionDescription" id="questionDescription" cols="30" rows="10" placeholder="Explain your question"  {...register("questionDescription", { required: true })}></textarea>
-          
+              <textarea
+                className="w-full h-52 border-2 border-black rounded-lg ps-4 focus:outline-none mt-3"
+                name="questionDescription"
+                id="questionDescription"
+                cols="30"
+                rows="10"
+                placeholder="Explain your question"
+                {...register("questionDescription", { required: true })}
+              ></textarea>
+
               <div>
-                {errors.milestones && (
+                {errors.questionDescription && (
                   <p className="text-red-600 text-sm flex">
                     Please provide a course description
                   </p>
                 )}
               </div>
             </div>
-            <div className="cursor-pointer p-4 mt-2 w-28 text-white bg-purple-600 flex justify-center items-center gap-3">
+            <button
+              className="p-4 mt-2  text-white bg-purple-600 flex justify-center items-center gap-3"
+              type="submit"
+              value="Post"
+            >
+              Post
+              <PaperAirplaneIcon className="inline-block w-4"></PaperAirplaneIcon>{" "}
+            </button>
+            {/*  <div className="cursor-pointer p-4 mt-2 w-28 text-white bg-purple-600 flex justify-center items-center gap-3">
               <input type="submit" value="Post" />
               <PaperAirplaneIcon className="inline-block w-4"></PaperAirplaneIcon>
-            </div>
+            </div> */}
           </form>
         </div>
-      <CommunityPost formData={formData} key={1}/>
+        <CommunityPost formData={formData} key={1} />
       </div>
     </div>
   );
