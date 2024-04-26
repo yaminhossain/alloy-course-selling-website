@@ -16,7 +16,7 @@ import AddCourse from "../Pages/Instructor/AddCourse/AddCourse";
 import YourCourses from "../Pages/Instructor/YourCourses/YourCourses";
 import LoggedInHome from "../Pages/Home/LoggedInHome/LoggedInHome";
 import ApplyInstructor from "../Components/ApplyInstructor/ApplyInstructor";
-import Dashboard from "../Pages/Dashboard/Dashboard";
+import MyAccount from "../Pages/MyAccount/MyAccount";
 
   export const router = createBrowserRouter([
     {
@@ -84,10 +84,12 @@ import Dashboard from "../Pages/Dashboard/Dashboard";
           element : <ApplyInstructor></ApplyInstructor>
         },
         {
-          path : "/dashboard",
-          element : <Dashboard></Dashboard>
-        },
+          path: "/myAccount",
+          element: <MyAccount></MyAccount>
+        }
         
-      ]
+        
+      ],
     },
+   
   ]);

@@ -109,8 +109,7 @@ const AddCourse = () => {
                                 {errors.id && <p className="text-red-600 text-sm flex">id is required.</p>}
                             </div>
                         </div> */}
-
-
+                        
                         {/* Number of Milestones */}
                         <div>
                             <input className='border border-black mt-3 text-sm w-60 ps-3 py-2' {...register('milestones', { required: true })} placeholder="Number of Milestones" />
@@ -146,6 +145,13 @@ const AddCourse = () => {
                             <div>
                                 {errors.coursePrice && <p className="text-red-600 text-sm flex">courseHours is coursePrice.</p>}
                             </div>
+                        </div>
+                        {/* enrolled count */}
+                        <div>
+                            <input className=' hidden border border-black mt-3  text-sm w-60 ps-3 py-2' {...register('enrollCount', )}  
+                            value={0}
+                            />
+                            
                         </div>
 
                         {/* <input className='border border-black mt-3 ps-3' {...register('ratings', { required: true })} placeholder="ratings" />
