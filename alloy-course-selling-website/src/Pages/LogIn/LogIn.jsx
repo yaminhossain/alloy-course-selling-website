@@ -1,4 +1,3 @@
-import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import loginPageImage from "../../../public/images/loginpage images/login page.png";
 import googleLogo from "../../../public/images/logos/google logo.png";
@@ -46,6 +45,19 @@ const LogIn = () => {
     signInWithPopup(auth, provider)
       .then((result) => {
         const credential = result;
+        console.log(credential.user);
+        const loggedInUser = result.user;
+
+        const saveUser = { name: loggedInUser.displayName, email: loggedInUser.email, role: "student" }
+
+        fetch('http://localhost:5000/users', {
+          method: 'POST',
+          headers: {
+            'content-type': 'application/json'
+          },
+          body: JSON.stringify(saveUser)
+        })
+          .then(res => res.json())
         /* If logged in the switch the route */
         if (credential) {
           navigate("/myLearning");

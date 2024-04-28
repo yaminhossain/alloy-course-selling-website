@@ -48,7 +48,7 @@ const SignUp = () => {
             // send user data to database.................
             const insertUser = {name:name, email:email, role:role }
             console.log(insertUser);
-            fetch('https://server-course-selling.vercel.app/users', {
+            fetch('http://localhost:5000/users', {
                             method: 'POST',
                             headers: {
                                 'content-type': 'application/json'
