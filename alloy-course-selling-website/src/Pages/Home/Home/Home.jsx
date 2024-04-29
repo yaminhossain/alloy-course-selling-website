@@ -12,6 +12,8 @@ import ReqCourses from "../ReqCourses/ReqCourses";
 
 
 const Home = () => {
+
+    
     return (
         <div >
             <Banner></Banner>

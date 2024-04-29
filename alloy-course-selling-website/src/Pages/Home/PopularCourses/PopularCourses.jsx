@@ -20,7 +20,7 @@ const PopularCourses = () => {
 
 
     // data fetch..............
-    const [jsonData, setJsonData] = useState(null);
+    const [fetchData, setFetchData] = useState(null);
 
     useEffect(() => {
         const fetchData = async () => {
@@ -30,7 +30,7 @@ const PopularCourses = () => {
                     throw new Error('Failed to fetch data');
                 }
                 const data = await response.json();
-                setJsonData(data);
+                setFetchData(data);
             } catch (error) {
                 console.error('Error fetching data:', error);
             }
@@ -39,11 +39,11 @@ const PopularCourses = () => {
         fetchData();
     }, []);
 
-    console.log(jsonData);
+    // console.log(fetchData);
 
     return (
 
-        jsonData ?
+        fetchData ?
             <div className='mx-40 h-full'>
                 <h2 className="text-center text-3xl my-6 border-b-4 rounded-b-lg w-60  mx-auto  ">Popular Courses</h2>
 
@@ -74,29 +74,15 @@ const PopularCourses = () => {
 
                             {/* mapping---------- */}
 
-                            {jsonData?.map(item => (
+                            {fetchData?.map(item => (
                                 <SwiperSlide
-                                    key={item.id}
+                                    key={item._id}
                                     item={item}
                                 >
-                                    <PopularCourseComponent key={item.id} item={item}>
+                                    <PopularCourseComponent key={item._id} item={item}>
 
                                     </PopularCourseComponent>
 
-                                    {/* --------------- alternative-------------------- */}
-                                    {/* <PopularCourseComponent key={item.id} 
-                                    courseBanner={item.courseBanner}
-                                    courseHours={item.courseHours}
-                                    coursePrice={item.coursePrice}
-                                    courseTitle={item.courseTitle}
-                                    enrolledCount={item.enrolledCount}
-                                    id={item.id}
-                                    milestones={item.milestones}
-                                    modules={item.modules}
-                                    >
-
-                                    </PopularCourseComponent> */}
-                                    {/* -----------------alternative--------------------- */}
                                 </SwiperSlide>
                             ))}
                         </Swiper>
