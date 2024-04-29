@@ -69,7 +69,7 @@ const SignUp = () => {
                                     navigate('/');
                                 }
                             })
-                            //------------end send user data to database
+      //------------end send user data to database
             console.log("Profile updated!");
             // console.log(role)
           })

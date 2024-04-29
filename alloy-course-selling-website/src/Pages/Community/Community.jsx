@@ -1,9 +1,14 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 
 import { useForm } from "react-hook-form";
 import { PaperAirplaneIcon } from "@heroicons/react/24/solid";
 import CommunityPost from "./CommunityPost/CommunityPost";
+import { AuthContext } from "../../Provider/AuthProvider/AuthProvider";
+import Swal from "sweetalert2";
 const Community = () => {
+
+  const user = useContext(AuthContext);
+  console.log(user)
   const {
     register,
     handleSubmit,
@@ -13,7 +18,38 @@ const Community = () => {
 
   const [formData, setFormData] = useState({});
 
-  const onSubmit = (data) => setFormData(data);
+  const onSubmit = (data) =>{
+    setFormData(data);
+    // send user data to database.................
+    fetch('http://localhost:5000/communityPost', {
+      method: 'POST',
+      headers: {
+          'content-type': 'application/json'
+      },
+      body: JSON.stringify(data)
+  })
+  .then(res => res.json())
+      .then(data => {
+          if (data.insertedId) {
+              // reset();
+              Swal.fire({
+                  position: 'top-end',
+                  icon: 'success',
+                  title: 'User created successfully.',
+                  showConfirmButton: false,
+                  timer: 1500
+              });
+             //  navigate('/');
+          }
+      })
+//------------end send user data to database
+  } 
+
+  // Extract day, month, and year
+  // const day = String(getDatabase())
+  // console.log(day)
+  // const month = String(getMonth() + 1).padStart(2, '0'); // Month is zero-based
+  // const year = getFullYear();
 
   console.log(watch("example")); // watch input value by passing the name of it
 
@@ -23,6 +59,27 @@ const Community = () => {
         <div className="px-8 bg-slate-50 rounded-md max-w-[600px]">
           <h1 className="text-5xl mb-20">Ask a public question</h1>
           <form onSubmit={handleSubmit(onSubmit)}>
+    {/* default user name and email  */}
+            <div className="hidden">
+              <input
+                className="w-full h-12 border-2 border-black rounded-full  ps-4 focus:outline-none mt-3"
+                {...register("name", )}
+                value={user?.displayName}
+
+              />
+              <input
+                className="w-full h-12 border-2 border-black rounded-full  ps-4 focus:outline-none mt-3"
+                {...register("email", )}
+                value={user?.email}
+              />
+              <input
+                className="w-full h-12 border-2 border-black rounded-full  ps-4 focus:outline-none mt-3"
+                {...register("date", )}
+                value={new Date().toLocaleString()}             
+                 />
+            </div>
+
+
             {/* Question Title */}
             <div>
               <label htmlFor="question" className="text-left text-2xl ml-4">

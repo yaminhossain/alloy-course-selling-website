@@ -1,14 +1,45 @@
 import { useForm } from "react-hook-form";
 import { PaperAirplaneIcon } from "@heroicons/react/24/solid";
+import { AuthContext } from "../../Provider/AuthProvider/AuthProvider";
+import { useContext } from "react";
+import Swal from "sweetalert2";
 const CourseRequest = () => {
+
+  const user = useContext(AuthContext);
+  console.log(user)
   const {
     register,
     handleSubmit,
     watch,
     formState: { errors },
   } = useForm();
+  
+  const onSubmit = (data) =>{
+     // send user data to database.................
+     fetch('http://localhost:5000/courseRequest', {
+                     method: 'POST',
+                     headers: {
+                         'content-type': 'application/json'
+                     },
+                     body: JSON.stringify(data)
+                 })
+                 .then(res => res.json())
+                     .then(data => {
+                         if (data.insertedId) {
+                             // reset();
+                             Swal.fire({
+                                 position: 'top-end',
+                                 icon: 'success',
+                                 title: 'User created successfully.',
+                                 showConfirmButton: false,
+                                 timer: 1500
+                             });
+                            //  navigate('/');
+                         }
+                     })
+//------------end send user data to database
+  }    
 
-  const onSubmit = (data) => console.log(data);
 
   console.log(watch("example"));
   return (
@@ -19,6 +50,22 @@ const CourseRequest = () => {
             What do you want to learn next? Let us know.
           </h1>
           <form onSubmit={handleSubmit(onSubmit)}>
+
+            {/*user default email and name  */}
+            <div className="hidden ">
+              <input
+                className="w-full h-12 border-2 border-black rounded-full  ps-4 focus:outline-none mt-3"
+                {...register("name",)}
+                value={user?.displayName}
+              />
+              <input
+                className=" w-full h-12 border-2 border-black rounded-full  ps-4 focus:outline-none mt-3"
+                {...register("email",)}
+                value={user?.email}
+              />
+            </div>
+            {/* ---------------------------------- */}
+
             {/* Course Title */}
             <div>
               <label htmlFor="question" className="text-left text-2xl ml-4">
