@@ -51,13 +51,13 @@ const Navbar = () => {
           <Link to="myLearning" className="dark:text-white">My Learning</Link>
 
           <Themes></Themes>
-          <LanguageIcon className="w-6 h-6 cursor-pointer dark:text-white"></LanguageIcon>
+          <LanguageIcon className="w-6 h-6 cursor-pointer dark:text-white hidden"></LanguageIcon>
           <ShoppingCartIcon className=" w-6 h-6 cursor-pointer dark:text-white"></ShoppingCartIcon>
 
           <BookmarkIcon className="w-6 h-6 cursor-pointer dark:text-white">
             <Link to="bookMarks"></Link>
           </BookmarkIcon>
-          <BellIcon className="w-6 h-6 cursor-pointer dark:text-white"></BellIcon>
+          <BellIcon className="w-6 h-6 cursor-pointer dark:text-white hidden"></BellIcon>
 
           {
             user ?

@@ -21,7 +21,7 @@ const Community = () => {
   const onSubmit = (data) =>{
     setFormData(data);
     // send user data to database.................
-    fetch('http://localhost:5000/communityPost', {
+    fetch('https://assignment-11-serve-site-kdls-44zm0028t-anik12136s-projects.vercel.app/communityPost', {
       method: 'POST',
       headers: {
           'content-type': 'application/json'

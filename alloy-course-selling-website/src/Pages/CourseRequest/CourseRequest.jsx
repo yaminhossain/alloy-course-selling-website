@@ -16,7 +16,7 @@ const CourseRequest = () => {
   
   const onSubmit = (data) =>{
      // send user data to database.................
-     fetch('http://localhost:5000/courseRequest', {
+     fetch('https://assignment-11-serve-site-kdls-44zm0028t-anik12136s-projects.vercel.app/courseRequest', {
                      method: 'POST',
                      headers: {
                          'content-type': 'application/json'

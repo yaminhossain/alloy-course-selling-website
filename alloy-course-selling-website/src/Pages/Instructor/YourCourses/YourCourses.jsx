@@ -17,7 +17,7 @@ const YourCourses = () => {
             try {
                 const response = await fetch(`https://assignment-11-serve-site-kdls-4ci5nq6c3-anik12136s-projects.vercel.app/formCourses/${user?.email}`);
                 // const response = await fetch("https://assignment-11-serve-site-kdls-4ci5nq6c3-anik12136s-projects.vercel.app/formCourses");
-                // const response = await fetch(`http://localhost:5000/formCourses/${user?.email}`);
+                // const response = await fetch(`https://assignment-11-serve-site-kdls-44zm0028t-anik12136s-projects.vercel.app/formCourses/${user?.email}`);
                 if (!response.ok) {
                     throw new Error('Failed to fetch data');
                 }
@@ -35,7 +35,7 @@ const YourCourses = () => {
 
     return (
         <div className="text-center">
-            <p className="text-5xl">Your Courses</p>
+            <p className="text-4xl my-7">Your Courses</p>
 
             {courses?.map(item => (
                 <SwiperSlide className=" flex"
