@@ -9,13 +9,19 @@ import StudentThink from "../StudentThink/StudentThink";
 import TopCategories from "../TopCategories/TopCategories";
 import WonderfulJourney from "../WonderfulJourney/WonderfulJourney";
 import ReqCourses from "../ReqCourses/ReqCourses";
+import { useContext } from "react";
+import { AuthContext } from "../../../Provider/AuthProvider/AuthProvider";
+import LoggedInHome from "../LoggedInHome/LoggedInHome";
 
 
 const Home = () => {
 
-    
+const user = useContext(AuthContext);
     return (
-        <div >
+        <>
+        {
+            !user?
+            <div >
             <Banner></Banner>
             <TopCategories></TopCategories>
             <FeaturedTopicByCategory></FeaturedTopicByCategory>
@@ -28,6 +34,11 @@ const Home = () => {
             <InstructorJourney></InstructorJourney>
             <Sponsor></Sponsor>
         </div>
+        :
+        <LoggedInHome></LoggedInHome>
+
+        }
+        </>
     );
 };
 

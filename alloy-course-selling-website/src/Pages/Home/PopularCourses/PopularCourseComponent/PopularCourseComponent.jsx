@@ -1,3 +1,6 @@
+import { BookmarkIcon, ShoppingCartIcon } from "@heroicons/react/24/outline";
+import AddTOCart from "../../../../Components/AddTOCart/AddTOCart";
+import Bookmark from "../../../../Components/Bookmark/Bookmark";
 
 // import PropTypes from 'prop-types';
 const PopularCourseComponent = ({ item }) => {
@@ -46,6 +49,12 @@ const PopularCourseComponent = ({ item }) => {
 
                         ))}
 
+                    </div>
+                    
+                    {/* add To cart and bookmark */}
+                    <div className="flex mt-4 gap-4">
+                        <AddTOCart></AddTOCart>
+                        <Bookmark></Bookmark>
                     </div>
 
                 </div>
