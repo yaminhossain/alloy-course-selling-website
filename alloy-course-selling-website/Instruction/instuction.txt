@@ -37,9 +37,9 @@ Branches we created so far
 ------------------------------------------------------------------
 
 Yamin Task:
-1.Community
+1.Community->done
 2.Course Request in add courses page using modal
-3. Your Courses Design using Grid
+3. Your Courses Design using Grid ->done
 4.Cart Design
 5.BookMark Design
 6. category field in add courses form->Done
