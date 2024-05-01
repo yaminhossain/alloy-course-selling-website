@@ -42,5 +42,5 @@ Yamin Task:
 3. Your Courses Design using Grid
 4.Cart Design
 5.BookMark Design
-6. category field in add courses form
+6. category field in add courses form->Done
 7.rounded profile picture in user profile section-> Done
