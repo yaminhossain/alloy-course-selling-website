@@ -79,7 +79,7 @@ const PopularCourses = () => {
                                     key={item._id}
                                     item={item}
                                 >
-                                    <PopularCourseComponent key={item._id} item={item}>
+                                    <PopularCourseComponent key={item._id} course={item}>
 
                                     </PopularCourseComponent>
 

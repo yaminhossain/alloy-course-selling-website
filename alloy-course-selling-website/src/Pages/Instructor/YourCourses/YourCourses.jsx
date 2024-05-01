@@ -2,8 +2,7 @@ import { useContext, useEffect, useState } from "react";
 // import Loading from "../../../Components/Loading/Loading";
 // import Swiper from "swiper";
 // import { Keyboard, Navigation, Pagination, Scrollbar } from "swiper/modules";
-import { SwiperSlide } from "swiper/react";
-import PopularCourseComponent from "../../Home/PopularCourses/PopularCourseComponent/PopularCourseComponent";
+
 import { AuthContext } from "../../../Provider/AuthProvider/AuthProvider";
 import InstructorDashboardCourses from "./InstructorDashboardCourses/InstructorDashboardCourses";
 
@@ -39,7 +38,7 @@ const YourCourses = () => {
     <div className="text-center">
       <p className="text-4xl my-7">Your Courses</p>
       <div className="flex justify-center items-center mb-6">
-        <div className="grid grid-cols-4 gap-y-5 w-3/4">
+        <div className="grid lg:grid-cols-4 gap-y-5 w-3/4 md:grid-cols-3 lg:gap-x-4 md:gap-x-3">
           {courses?.map((course) => (
             <InstructorDashboardCourses
               course={course}

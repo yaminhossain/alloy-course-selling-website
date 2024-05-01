@@ -39,7 +39,7 @@ const InstructorDashboardCourses = ({ course }) => {
         <div className="text-blue-800 grid grid-cols-2 gap-1">
 
         {
-            course.features.map((feature,index)=><p className="bg-blue-300 p-1 rounded-lg" key={index}>{feature}</p>)
+            course.features.map((feature,index)=><p className="bg-blue-300 p-1 rounded-lg text-center" key={index}>{feature}</p>)
         }
         </div>
       </div>
