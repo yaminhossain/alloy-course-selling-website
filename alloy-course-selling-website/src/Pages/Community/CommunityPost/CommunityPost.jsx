@@ -3,8 +3,7 @@ import { AuthContext } from "../../../Provider/AuthProvider/AuthProvider";
 import Post from "./Post";
 
 const CommunityPost = () => {
-  const user = useContext(AuthContext);
-  console.log("User at community post", user)
+  
 
   /* -------------------------------------------------
     A Dummy json folder has been created in the public folder. From that folder post.json is being utilized in this useEffect (public/DummyJson/post.json ).
@@ -72,7 +71,7 @@ const CommunityPost = () => {
   return (
     <div>
       {
-        fetchData.map((post)=><Post post={post} user={user} key={post.id}></Post>)
+        fetchData.map((post)=><Post post={post} key={post.id}></Post>)
       }
    
     </div>
