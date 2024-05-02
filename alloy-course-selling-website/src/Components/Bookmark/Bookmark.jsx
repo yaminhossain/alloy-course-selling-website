@@ -19,12 +19,12 @@ const Bookmark = ({ course }) => {
     } = useForm();
 
 
-    // const [formData, setFormData] = useState({});
+    const [formData, setFormData] = useState({});
     const onSubmit = (data) => {
-        // setFormData(data);
+        setFormData(data);
         // send user data to database.................
         fetch(
-            "http://localhost:5000/bookmarks",
+            "https://assignment-11-serve-site-kdls-8ept06ln5-anik12136s-projects.vercel.app/bookmarks",
             {
                 method: "POST",
                 headers: {
@@ -49,7 +49,9 @@ const Bookmark = ({ course }) => {
             });
         //------------end send user data to database
     };
-    console.log(course)
+    // console.log(course)
+    console.log(formData)
+
 
     if (!user) {
         return (
@@ -74,11 +76,11 @@ const Bookmark = ({ course }) => {
 
                         {/* default user name and email  */}
                         <div className="hidden">
-                        <input
+                            <input
                                 {...register("date")}
                                 value={new Date().toLocaleString()}
                             />
-                             <input
+                            <input
                                 {...register("idEmail")}
                                 value={course._id + user.email}
                             />
@@ -86,13 +88,61 @@ const Bookmark = ({ course }) => {
                                 {...register("email")}
                                 value={user?.email}
                             />
-                            
-                           
+
+
                             <input
                                 {...register("bookmarkId")}
                                 value={course._id}
                             />
-                           
+                            <input
+                                {...register("courseBanner")}
+                                value={course.courseBanner}
+                            />
+                            <input
+                                {...register("courseCategories")}
+                                value={course.courseCategories}
+                            />
+                            <input
+                                {...register("courseHours")}
+                                value={course.courseHours}
+                            />
+                            <input
+                                {...register("coursePrice")}
+                                value={course.coursePrice}
+                            />
+                            <input
+                                {...register("courseTitle")}
+                                value={course.courseTitle}
+                            />
+                            <input
+                                {...register("enrollCount")}
+                                value={course.enrollCount}
+                            />
+                            <input
+                                {...register("features")}
+                                value={course.features}
+                            />
+                            <input
+                                {...register("milestones")}
+                                value={course.milestones}
+                            />
+                            <input
+                                {...register("modules")}
+                                value={course.modules}
+                            />
+                            <input
+                                {...register("numberOfQuizzes")}
+                                value={course.numberOfQuizzes}
+                            />
+                            <input
+                                {...register("numberOfVideos")}
+                                value={course.numberOfVideos}
+                            />
+                            <input
+                                {...register("teacherName")}
+                                value={course.teacherName}
+                            />
+
                         </div>
 
 
