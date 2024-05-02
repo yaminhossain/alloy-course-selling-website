@@ -2,12 +2,8 @@ import { XCircleIcon } from "@heroicons/react/24/outline";
 import { useState } from "react";
 
 const CartItems = ({ cartItem }) => {
-//   const [totalCoursePrice,setTotalCoursePrice] = useState(0);
-// //   setTotalCoursePrice(totalCoursePrice + parseFloat(cartItem.coursePrice));
-// //   console.log(totalCoursePrice);
-// const coursePrice = parseFloat(cartItem.coursePrice);
-//    setTotalCoursePrice(totalCoursePrice + coursePrice)
-//   console.log("From cart", typeof(cartItem.coursePrice));
+
+
   return (
     <div className="flex justify-between border-t-2 px-4">
       <div className="flex  gap-7 py-4">
@@ -39,7 +35,9 @@ const CartItems = ({ cartItem }) => {
 
       <div className="flex justify-center items-center">
         <XCircleIcon className="w-6 h-6 text-red-600 cursor-pointer"></XCircleIcon>
-        <p className="text-violet-700 font-bold px-9">${cartItem.coursePrice}</p>
+        <p className="text-violet-700 font-bold px-9">
+          ${cartItem.coursePrice}
+        </p>
       </div>
     </div>
   );

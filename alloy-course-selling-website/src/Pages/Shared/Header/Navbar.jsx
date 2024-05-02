@@ -19,7 +19,7 @@ const Navbar = () => {
   // console.log(user)
 
   return (
-    <div className="sticky top-0  bg-white  dark:bg-black bg-opacity-50 dark:bg-opacity-50   ">
+    <div className="sticky top-0  bg-white  dark:bg-black bg-opacity-50 dark:bg-opacity-50 z-50">
       <div className="flex justify-between py-5 mx-8 items-center">
         {/* Child flex-1 */}
         <div className="flex gap-5 items-center ">

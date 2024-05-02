@@ -65,7 +65,7 @@ const PopularCourseComponent = ({ course }) => {
     </div>
     {/* Add to cart button */}
     <div>
-      <AddTOCart></AddTOCart>
+      <AddTOCart coursePrice={course.coursePrice}></AddTOCart>
     </div>
   </div>
 </div>
