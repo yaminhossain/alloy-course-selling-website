@@ -99,7 +99,7 @@ useEffect(() => {
               </div>
             </div>
             <div >
-              <Link to={"/dashboard"}><button className="w-full  p-4 border-b-2">Dashboard</button></Link>
+            
 
                 {
                   alreadyInstructor?
@@ -110,7 +110,7 @@ useEffect(() => {
                 }
 
               <button className="w-full  p-4 border-b-2"><Link to={"/myAccount"}>My Account</Link></button>
-              <button className="w-full  p-4 border-b-2"><Link to={"/"}>My Chart</Link></button>
+              <button className="w-full  p-4 border-b-2"><Link to={"/"}>My Cart</Link></button>
               <button className="w-full  p-4"><Link to={"/"}>Bookmarks</Link></button>
               <button className="w-full bg-violet-600 hover:bg-violet-500 p-4 text-white flex justify-center items-center gap-4" onClick={logOutHandler}>
                 <PowerIcon className="w-5 inline-block"></PowerIcon>
