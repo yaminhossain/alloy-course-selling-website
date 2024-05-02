@@ -33,7 +33,7 @@ const UserProfile = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch(`http://localhost:5000/users/${user?.email}`); // Specify the path to your JSON file in the public folder
+        const response = await fetch(`https://assignment-11-serve-site-kdls-44zm0028t-anik12136s-projects.vercel.app/users/${user?.email}`); // Specify the path to your JSON file in the public folder
         if (!response.ok) {
           throw new Error('Failed to fetch data');
         }
@@ -76,7 +76,7 @@ useEffect(() => {
       <div className="relative">
         <div className="cursor-pointer" onClick={toggleMenu}>
           <img
-            className=" rounded-full h-9"
+            className=" rounded-full h-9 w-9"
             src={user.photoURL === null ? defaultUser : user.photoURL}
             alt="user"
           />
@@ -85,7 +85,7 @@ useEffect(() => {
           <div className="absolute inline-block top-12 right-2 bg-white border border-gray-300  shadow-md w-80">
             <div className="flex justify-between items-center p-4 border-b-2 mb-2">
               <img
-                className="h-10 rounded-full"
+                className="h-10 w-10 rounded-full"
                 src={user.photoURL === null ? defaultUser : user.photoURL}
                 alt="user profile picture"
               />

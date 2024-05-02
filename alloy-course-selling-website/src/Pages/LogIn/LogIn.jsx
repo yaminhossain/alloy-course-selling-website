@@ -50,7 +50,7 @@ const LogIn = () => {
 
         const saveUser = { name: loggedInUser.displayName, email: loggedInUser.email, role: "student" }
 
-        fetch('http://localhost:5000/users', {
+        fetch('https://assignment-11-serve-site-kdls-44zm0028t-anik12136s-projects.vercel.app/users', {
           method: 'POST',
           headers: {
             'content-type': 'application/json'

@@ -6,6 +6,7 @@ import { app } from "../../firebase/config";
 const MyAccount = () => {
   const auth = getAuth(app);
   const user = useContext(AuthContext);
+  console.log(user);
 
   const {
     register,
@@ -13,9 +14,9 @@ const MyAccount = () => {
     watch,
     formState: { errors },
   } = useForm();
-
+/* Update profile section */
   const onSubmit = (data) => {
-    console.log(data.photoURL);
+    console.log(typeof(data.photoURL));
     updateProfile(user, {
         displayName: data.name, photoURL: data.photoURL
       }).then(() => {
