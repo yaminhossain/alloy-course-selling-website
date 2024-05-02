@@ -64,9 +64,16 @@ const AddCourse = () => {
 
           <Link to={"/addCourse"}>
             {" "}
-            <button className="text-white bg-purple-600 px-16 py-3 font-semibold ">
-              View all requested courses
+            {/* ----------------------------------------------
+            Modal Start from here
+            ----------------------------------------------- */}
+            {/* You can open the modal using document.getElementById('ID').showModal() method */}
+            <button className="text-white bg-purple-600 px-16 py-3 font-semibold">
+              <Link to={"/viewRequestedCourse"}>View all requested courses</Link>
             </button>
+            {/* -----------------------------------------------------------------------------
+            Modal Ends here
+            --------------------------------------------------------------------------------------*/}
           </Link>
         </div>
       </div>

@@ -42,7 +42,7 @@ const YourCourses = () => {
           {courses?.map((course) => (
             <InstructorDashboardCourses
               course={course}
-              key={course.id}
+              key={course._id}
             ></InstructorDashboardCourses>
           ))}
         </div>

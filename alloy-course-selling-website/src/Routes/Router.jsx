@@ -16,6 +16,7 @@ import LoggedInHome from "../Pages/Home/LoggedInHome/LoggedInHome";
 import ApplyInstructor from "../Components/ApplyInstructor/ApplyInstructor";
 import MyAccount from "../Pages/MyAccount/MyAccount";
 import Cart from "../Pages/Cart/Cart";
+import ViewRequestedCourse from "../Pages/Instructor/ViewRequestedCourse/ViewRequestedCourse";
 
 export const router = createBrowserRouter([
   {
@@ -89,6 +90,10 @@ export const router = createBrowserRouter([
       {
         path: "/cart",
         element: <Cart></Cart>,
+      },
+      {
+        path: "/viewRequestedCourse",
+        element: <ViewRequestedCourse></ViewRequestedCourse>,
       },
     ],
   },
