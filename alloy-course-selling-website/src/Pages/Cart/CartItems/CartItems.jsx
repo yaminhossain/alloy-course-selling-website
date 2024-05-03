@@ -34,7 +34,8 @@ const CartItems = ({ cartItem }) => {
       </div>
 
       <div className="flex justify-center items-center">
-        <XCircleIcon className="w-6 h-6 text-red-600 cursor-pointer"></XCircleIcon>
+      <button className='bg-violet-700 w-full text-white p-4 hover:bg-violet-600'>Enroll now</button>
+        <XCircleIcon className="w-6 h-6 text-red-600 cursor-pointer hidden"></XCircleIcon>
         <p className="text-violet-700 font-bold px-9">
           ${cartItem.coursePrice}
         </p>
