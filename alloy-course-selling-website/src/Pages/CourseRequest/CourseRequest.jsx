@@ -3,6 +3,7 @@ import { PaperAirplaneIcon } from "@heroicons/react/24/solid";
 import { AuthContext } from "../../Provider/AuthProvider/AuthProvider";
 import { useContext } from "react";
 import Swal from "sweetalert2";
+import { Link } from "react-router-dom";
 const CourseRequest = () => {
 
   const user = useContext(AuthContext);
@@ -13,32 +14,32 @@ const CourseRequest = () => {
     watch,
     formState: { errors },
   } = useForm();
-  
-  const onSubmit = (data) =>{
-     // send user data to database.................
-     fetch('https://assignment-11-serve-site-kdls-44zm0028t-anik12136s-projects.vercel.app/courseRequest', {
-                     method: 'POST',
-                     headers: {
-                         'content-type': 'application/json'
-                     },
-                     body: JSON.stringify(data)
-                 })
-                 .then(res => res.json())
-                     .then(data => {
-                         if (data.insertedId) {
-                             // reset();
-                             Swal.fire({
-                                 position: 'top-end',
-                                 icon: 'success',
-                                 title: 'User created successfully.',
-                                 showConfirmButton: false,
-                                 timer: 1500
-                             });
-                            //  navigate('/');
-                         }
-                     })
-//------------end send user data to database
-  }    
+
+  const onSubmit = (data) => {
+    // send user data to database.................
+    fetch('https://assignment-11-serve-site-kdls-44zm0028t-anik12136s-projects.vercel.app/courseRequest', {
+      method: 'POST',
+      headers: {
+        'content-type': 'application/json'
+      },
+      body: JSON.stringify(data)
+    })
+      .then(res => res.json())
+      .then(data => {
+        if (data.insertedId) {
+          // reset();
+          Swal.fire({
+            position: 'top-end',
+            icon: 'success',
+            title: 'User created successfully.',
+            showConfirmButton: false,
+            timer: 1500
+          });
+          //  navigate('/');
+        }
+      })
+    //------------end send user data to database
+  }
 
 
   console.log(watch("example"));
@@ -123,6 +124,11 @@ const CourseRequest = () => {
               <PaperAirplaneIcon className="inline-block w-4"></PaperAirplaneIcon>{" "}
             </button>
           </form>
+          <Link to={"/viewRequestedCourse"}>
+            <button className="text-white bg-purple-600 px-16 py-3 font-semibold w-full mt-5">
+              View all requested courses
+            </button>
+          </Link>
         </div>
       </div>
     </div>

@@ -12,7 +12,7 @@ const Cart = () => {
     const fetchData = async () => {
       try {
         const response = await fetch(
-          `http://localhost:5000/carts/${user?.email}`
+          `https://assignment-11-serve-site-kdls-6ww02uv0l-anik12136s-projects.vercel.app/carts/${user?.email}`
         );
         if (!response.ok) {
           throw new Error("Failed to fetch data");
@@ -53,7 +53,8 @@ let prices=[];
               <CartItems cartItem={cartItem} key={cartItem._id}></CartItems>
             ))}
           </div>
-          <div className="border border-red-50">
+          {/* to do */}
+          <div className="border border-red-50 hidden">
             <TotalCartAmount totalPrice={totalPrice} />
           </div>
         </div>

@@ -27,7 +27,9 @@ const Navbar = () => {
             <h2 className="dark:text-white cursor-pointer">Alloy</h2>
           </Link>
           <button className="cursor-pointer dark:text-white">Categories</button>
-          <label className="search-field relative">
+
+          {/* to do */}
+          <label className="search-field relative hidden">
             <input
               className="w-80 border-2 border-black rounded-full h-12 ps-10 focus:outline-none"
               type="text"

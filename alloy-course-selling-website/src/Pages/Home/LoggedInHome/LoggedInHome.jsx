@@ -1,3 +1,4 @@
+import AllCourses from "../../../Components/AllCourses/AllCourses";
 import PopularCourses from "../PopularCourses/PopularCourses";
 import TopCategories from "../TopCategories/TopCategories";
 
@@ -6,6 +7,7 @@ const LoggedInHome = () => {
         <div>
             <TopCategories></TopCategories>
             <PopularCourses></PopularCourses>
+            <AllCourses></AllCourses>
         </div>
     );
 };
