@@ -52,7 +52,7 @@ const CourseCardDesign = ({ course }) => {
                 </div>
                 {/* Add to cart button */}
                 <div>
-                    <AddTOCart></AddTOCart>
+                    <AddTOCart course={course}></AddTOCart>
                 </div>
             </div>
         </div>

@@ -4,7 +4,7 @@ import { AuthContext } from '../../Provider/AuthProvider/AuthProvider';
 import Swal from 'sweetalert2';
 import { useForm } from "react-hook-form";
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Navigate } from 'react-router-dom';
 
 const Bookmark = ({ course }) => {
     const user = useContext(AuthContext);
@@ -14,8 +14,7 @@ const Bookmark = ({ course }) => {
     const {
         register,
         handleSubmit,
-        watch,
-        formState: { errors },
+        // formState: { errors },
     } = useForm();
 
 
@@ -23,31 +22,49 @@ const Bookmark = ({ course }) => {
     const onSubmit = (data) => {
         setFormData(data);
         // send user data to database.................
-        fetch(
-            "https://assignment-11-serve-site-kdls-8ept06ln5-anik12136s-projects.vercel.app/bookmarks",
-            {
-                method: "POST",
-                headers: {
-                    "content-type": "application/json",
-                },
-                body: JSON.stringify(data),
-            }
-        )
-            .then((res) => res.json())
-            .then((data) => {
-                if (data.insertedId) {
-                    // reset();
-                    Swal.fire({
-                        position: "top-end",
-                        icon: "success",
-                        title: "Bookmarked successfully.",
-                        showConfirmButton: false,
-                        timer: 1500,
-                    });
-                    //  navigate('/');
+        if (user && user.email) {
+
+            fetch(
+                "https://assignment-11-serve-site-kdls-8ept06ln5-anik12136s-projects.vercel.app/bookmarks",
+                {
+                    method: "POST",
+                    headers: {
+                        "content-type": "application/json",
+                    },
+                    body: JSON.stringify(data),
                 }
-            });
+            )
+                .then((res) => res.json())
+                .then((data) => {
+                    if (data.insertedId) {
+                        // reset();
+                        Swal.fire({
+                            position: "top-end",
+                            icon: "success",
+                            title: "Bookmarked successfully.",
+                            showConfirmButton: false,
+                            timer: 1500,
+                        });
+                        //  navigate('/');
+                    }
+                });
+
+        }
         //------------end send user data to database
+        else {
+            Swal.fire({
+              title: 'Please login first',
+              icon: 'warning',
+              showCancelButton: true,
+              confirmButtonColor: '#3085d6',
+              cancelButtonColor: '#d33',
+              confirmButtonText: 'Login now!'
+            }).then((result) => {
+              if (result.isConfirmed) {
+                Navigate('/login', { state: { from: location } })
+              }
+            })
+          }
     };
     // console.log(course)
     console.log(formData)
@@ -88,7 +105,6 @@ const Bookmark = ({ course }) => {
                                 {...register("email")}
                                 value={user?.email}
                             />
-
 
                             <input
                                 {...register("bookmarkId")}

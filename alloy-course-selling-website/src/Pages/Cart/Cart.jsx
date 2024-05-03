@@ -12,7 +12,7 @@ const Cart = () => {
     const fetchData = async () => {
       try {
         const response = await fetch(
-          `https://assignment-11-serve-site-kdls-44zm0028t-anik12136s-projects.vercel.app/formCourses/${user?.email}`
+          `http://localhost:5000/carts/${user?.email}`
         );
         if (!response.ok) {
           throw new Error("Failed to fetch data");

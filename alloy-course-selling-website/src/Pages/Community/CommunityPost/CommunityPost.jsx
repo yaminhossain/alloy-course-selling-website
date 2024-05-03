@@ -20,7 +20,7 @@ const CommunityPost = () => {
         /* ------------------------
           fetching data from public folder
           --------------------------------- */
-        const response = await fetch("../../../../public/DummyJson/post.json");
+        const response = await fetch("https://assignment-11-serve-site-kdls-8ept06ln5-anik12136s-projects.vercel.app/communityPost");
         if (!response.ok) {
           throw new Error("Failed to fetch data");
         }
@@ -71,7 +71,7 @@ const CommunityPost = () => {
   return (
     <div>
       {
-        fetchData.map((post)=><Post post={post} key={post.id}></Post>)
+        fetchData?.map((post)=><Post post={post} key={post.id}></Post>)
       }
    
     </div>

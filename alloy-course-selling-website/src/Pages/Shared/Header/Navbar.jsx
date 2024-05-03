@@ -56,8 +56,11 @@ const Navbar = () => {
 
           <Themes></Themes>
           <LanguageIcon className="w-6 h-6 cursor-pointer dark:text-white hidden"></LanguageIcon>
-          <Link to={"/cart"}>
+          <Link to={"/cart"} className="flex">
+            {/* to do */}
+            {/* <p className="">{'0'}</p>  */}  
             <ShoppingCartIcon className=" w-6 h-6 cursor-pointer dark:text-white"></ShoppingCartIcon>
+
           </Link>
           <Link to="/bookMarks">
             <BookmarkIcon className="w-6 h-6 cursor-pointer dark:text-white"></BookmarkIcon>
