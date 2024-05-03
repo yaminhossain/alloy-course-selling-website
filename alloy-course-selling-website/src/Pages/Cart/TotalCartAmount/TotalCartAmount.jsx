@@ -2,7 +2,7 @@
 
 const TotalCartAmount = ({totalPrice}) => {
     return (
-        <div className='flex justify-center pt-4'>
+        <div className='flex justify-center pt-4 hidden'>
             <div className='w-3/4'>
 
             <h1 className='text-lg font-bold'>Total:</h1>

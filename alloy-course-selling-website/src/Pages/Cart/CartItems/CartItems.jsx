@@ -1,5 +1,5 @@
-import { XCircleIcon } from "@heroicons/react/24/outline";
-import { useState } from "react";
+// import { XCircleIcon } from "@heroicons/react/24/outline";
+// import { useState } from "react";
 
 const CartItems = ({ cartItem }) => {
 
@@ -39,7 +39,7 @@ const CartItems = ({ cartItem }) => {
           ${cartItem.coursePrice}
         </p>
         <div>
-        <button className="text-sm bg-slate-400 p-2 rounded-lg hover:bg-green-700">Get Access</button>
+        <button className="text-sm bg-slate-400 p-2 rounded-lg hover:bg-green-600">Get Access</button>
       </div>
       </div>
       
