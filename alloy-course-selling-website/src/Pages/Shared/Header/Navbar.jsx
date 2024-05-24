@@ -12,7 +12,7 @@ import "./navbar.css";
 import { useContext } from "react";
 import { AuthContext } from "../../../Provider/AuthProvider/AuthProvider";
 import UserProfile from "../../../Components/UserProfile/UserProfile";
-import useCart from "../../../Hooks/useCart/useCart";
+import useCart from "../../../Hooks/useCart";
 
 // The component starts from here
 const Navbar = () => {
