@@ -26,7 +26,7 @@ const Cart = () => {
 
     fetchData();
   }, [user]);
-  console.log(cartData);
+  // console.log(cartData);
   
 let prices=[];
   for (let data of cartData){
@@ -38,10 +38,10 @@ let prices=[];
 
   let totalPrice =0;
   for(let price of prices){
-    console.log("Price", price)
+    // console.log("Price", price)
     totalPrice = totalPrice + price;
   }
-  console.log("Total Price",totalPrice);
+  // console.log("Total Price",totalPrice);
   return (
     <div className="flex justify-center">
     {/*   <p>{price}</p> */}

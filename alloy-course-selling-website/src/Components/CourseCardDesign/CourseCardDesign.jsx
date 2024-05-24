@@ -1,7 +1,7 @@
 import AddTOCart from "../AddTOCart/AddTOCart";
 
 const CourseCardDesign = ({ course }) => {
-    console.log(course.features);
+    // console.log(course.features);
 
 
     return (

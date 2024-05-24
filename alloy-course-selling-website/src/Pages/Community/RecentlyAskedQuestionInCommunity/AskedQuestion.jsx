@@ -6,7 +6,7 @@ const AskedQuestion = ({ post }) => {
         <div className="collapse collapse-arrow bg-base-200">
           <input type="radio" name="my-accordion-2" />
           <div className="collapse-title text-xl font-medium">
-          {post.question}
+          {post.questionTitle}
           </div>
           <div className="collapse-content">
             <p>{post.questionDescription}</p>

@@ -12,12 +12,14 @@ import "./navbar.css";
 import { useContext } from "react";
 import { AuthContext } from "../../../Provider/AuthProvider/AuthProvider";
 import UserProfile from "../../../Components/UserProfile/UserProfile";
+import useCart from "../../../Hooks/useCart/useCart";
 
 // The component starts from here
 const Navbar = () => {
   const user = useContext(AuthContext);
   // console.log(user)
-
+const [cart] = useCart();
+console.log (cart.length);
   return (
     <div className="sticky top-0  bg-white  dark:bg-black bg-opacity-50 dark:bg-opacity-50 z-50">
       <div className="flex justify-between py-5 mx-8 items-center">
@@ -26,7 +28,7 @@ const Navbar = () => {
           <Link className="text-4xl font-bold" to="/">
             <h2 className="dark:text-white cursor-pointer">Alloy</h2>
           </Link>
-          <button className="cursor-pointer dark:text-white">Categories</button>
+          {/* <button className="cursor-pointer dark:text-white">Categories</button> */}
 
           {/* to do */}
           <label className="search-field relative hidden">
@@ -60,7 +62,7 @@ const Navbar = () => {
           <LanguageIcon className="w-6 h-6 cursor-pointer dark:text-white hidden"></LanguageIcon>
           <Link to={"/cart"} className="flex">
             {/* to do */}
-            {/* <p className="">{'0'}</p>  */}  
+            <p className="text-red-400  ">{cart?.length || 0}</p>   
             <ShoppingCartIcon className=" w-6 h-6 cursor-pointer dark:text-white"></ShoppingCartIcon>
 
           </Link>

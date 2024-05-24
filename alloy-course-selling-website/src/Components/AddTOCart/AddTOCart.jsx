@@ -3,15 +3,12 @@ import { useContext } from "react";
 import { Navigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import { AuthContext } from "../../Provider/AuthProvider/AuthProvider";
+import useCart from "../../Hooks/useCart/useCart";
 
 const AddTOCart = ({ course }) => {
 
-  // const {courseBanner,courseCategories,courseHours,coursePrice,courseTitle,
-  //   email,milestones,modules,features,numberOfQuizzes,numberOfVideos,teacherName,
-  //   _id} = course ;
   const user = useContext(AuthContext)
-
-  //  const idEmail = _id+user?.email ;
+  const [, refetch] = useCart();
 
   const handleAddToCart = course => {
     console.log(course);
@@ -20,7 +17,8 @@ const AddTOCart = ({ course }) => {
         idEmail: course._id + user?.email, courseId: course._id, courseHours: course.courseHours, courseBanner: course.courseBanner,
         coursePrice: course.coursePrice, teacherName: course.teacherName, numberOfVideos: course.numberOfVideos,
         email: user.email, teacherEmail: course.email, courseCategories: course.courseCategories,
-        courseTitle: course.courseTitle, milestones: course.milestones, modules: course.modules, features: course.features, numberOfQuizzes: course.numberOfQuizzes
+        courseTitle: course.courseTitle, milestones: course.milestones, modules: course.modules, features: course.features,
+        numberOfQuizzes: course.numberOfQuizzes
       }
 
       fetch('https://assignment-11-serve-site-kdls-6ww02uv0l-anik12136s-projects.vercel.app/carts', {
@@ -37,10 +35,11 @@ const AddTOCart = ({ course }) => {
             Swal.fire({
               position: 'top-end',
               icon: 'success',
-              title: 'Food added on the cart.',
+              title: 'Course added on the cart.',
               showConfirmButton: false,
               timer: 1500
             })
+            refetch()
           }
         })
     }
