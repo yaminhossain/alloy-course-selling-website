@@ -1,13 +1,52 @@
+import Swal from "sweetalert2";
 import AddTOCart from "../AddTOCart/AddTOCart";
+import useAxiosSecure from "../../Hooks/useAxiosSecure";
+import useBookmark from "../../Hooks/useBookmark";
 
 const CourseCardDesign = ({ course }) => {
     // console.log(course.features);
+
+    const axiosSecure = useAxiosSecure();
+  const [,refetch] = useBookmark();
+
+  const handleDelete = id => {
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, remove it!"
+    }).then((result) => {
+      if (result.isConfirmed) {
+
+        axiosSecure.delete(`/bookmarks/${id}`)
+          .then(res => {
+            if (res.data.deletedCount > 0) {
+              Swal.fire({
+                title: "Removed!",
+                text: "Your file has been Removed.",
+                icon: "success"
+              });
+              refetch();
+            }
+          })
+      }
+    });
+  }
 
 
     return (
         <div className="grid  justify-center items-center my-5">
             <div className="text-left border p-3 rounded-md shadow-lg w-72 flex flex-col justify-between">
                 <div>
+                    <div className="flex justify-end text-sm  ">
+                    <button onClick={() => handleDelete(course._id)}
+                    className="mb-2 border p-2 rounded-full text-white bg-red-800 hover:bg-red-500  ">Remove</button>
+                    
+                    </div>
+                    
                     {/* -----------------------Banner Image -------------------------*/}
                     <img
                         className="h-48 w-full object-fill"

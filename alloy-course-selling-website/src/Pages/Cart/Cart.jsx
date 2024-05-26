@@ -1,5 +1,5 @@
-import { useContext} from "react";
-import { AuthContext } from "../../Provider/AuthProvider/AuthProvider";
+// import { useContext} from "react";
+// import { AuthContext } from "../../Provider/AuthProvider/AuthProvider";
 import CartItems from "./CartItems/CartItems";
 
 import TotalCartAmount from "./TotalCartAmount/TotalCartAmount";
@@ -9,7 +9,7 @@ const Cart = () => {
 
   const [cart] = useCart();
   // const [cartData, setCartData] = useState([]);
-  const user = useContext(AuthContext);
+  // const user = useContext(AuthContext);
 
   // useEffect(() => {
   //   const fetchData = async () => {
