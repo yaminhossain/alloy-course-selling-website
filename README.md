@@ -6,8 +6,8 @@ ALLOY is a full-featured online learning platform where tutors can create and ma
 ### Client Side
 **`Hosted with Firebase`**: [Alloy Client Side](https://alloy-1feaf.web.app/)
 ### Server Side
-**`Hosted with Vercel`**: [Alloy Server Side](https://alloy-1feaf.web.app/)</br>  
-`Github`: [Server Side Repository](https://github.com/anik12136/server-assignment-11)
+**`Hosted with Vercel`**: [Alloy Server Side](https://alloy-server.vercel.app/)</br>  
+`Github`: [Server Side Repository](https://github.com/anik12136/alloy-server)
 ## Features
 
 - 🔐 Firebase Authentication (Email/Password, Google)
